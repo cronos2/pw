@@ -4,6 +4,7 @@ const webpack = require('webpack');
 
 
 module.exports = {
+    context: __dirname,
     entry: './assets/js/app.js',
     module: {
         rules: [
@@ -22,9 +23,21 @@ module.exports = {
         ]
     },
 
+    resolve: {
+        modules: [
+            path.join(__dirname, 'node_modules')
+        ]
+    },
+
+    resolveLoader: {
+        modules: [
+            path.join(__dirname, 'node_modules')
+        ]
+    },
+
     plugins: [
         new HtmlWebpackPlugin({
-            myOptions: { foo: 'bar' },
+            context: { title: 'Titulete' },
             filename: path.join(__dirname, '/index.html'),
             template: 'templates/index.njk'
         })
