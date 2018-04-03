@@ -1,0 +1,21 @@
+{% set vars = htmlWebpackPlugin.options.myOptions %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ vars.foo }}</title>
+  </head>
+  <body>
+    <header>
+      {% block header %}
+        <h1 class="header-logo">
+          <a href="#">{{ vars.foo }}</a>
+        </h1>
+      {% endblock %}
+    </header>
+
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

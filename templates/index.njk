@@ -1,0 +1,7 @@
+{% extends "__layout.njk" %}
+
+{% set blars = htmlWebpackPlugin.options.myOptions %}
+
+{% block content %}
+FOO {{ blars.foo }}
+{% endblock %}
