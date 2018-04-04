@@ -1,6 +1,5 @@
-#picture {
-  /* background-image: url("https://placeimg.com/640/480/people"); */
-  height: 65vh;
+main .row {
+  align-items: center;
 }
 
 #picture img {
