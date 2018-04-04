@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
+const loremIpsum = require('lorem-ipsum');
 
 
 module.exports = {
@@ -37,7 +38,12 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            context: { title: 'Titulete' },
+            context: {
+                lorem: loremIpsum,
+                lorem_words: function(n){
+                    return loremIpsum({ count: n, units: 'words' });
+                }
+            },
             filename: path.join(__dirname, '/index.html'),
             template: 'templates/index.njk'
         })
