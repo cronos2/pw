@@ -1,7 +1,32 @@
-<header>
-  <h1 class="header-logo">
-    <a href="/">
-      <img src="http://via.placeholder.com/150x150" alt="Logo" />
+<header class="bg-dark container-fluid p-3 px-5">
+  <div class="row">
+    <a href="/" class="col d-block mt-2">
+      <img src="http://via.placeholder.com/150x150" alt="Logo"
+           class="d-block mx-auto" />
     </a>
-  </h1>
+    <h1 id="brand-name" class="col-md-6 my-4 my-md-0 text-center">
+      <span class="d-lg-none">Lorem Ipsum</span>
+      <span class="d-none d-lg-inline huge">Lorem Ipsum</span>
+    </h1>
+    <form action="index2.html" method="POST" class="col">
+      <div class="row form-group">
+        <div class="col">
+          <input name="user" type="text" placeholder="Usuario"
+                 class="form-control form-control-sm" aria-label="Usuario" />
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col">
+          <input name="password" type="password" placeholder="Contraseña"
+                 class="form-control form-control-sm" aria-label="Contraseña">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col">
+          <input type="submit" value="Enviar"
+                 class="btn btn-sm btn-primary d-block mx-auto">
+        </div>
+      </div>
+    </form>
+  </div>
 </header>
