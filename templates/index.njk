@@ -1,12 +1,11 @@
 {% extends "__layout.njk" %}
 
-{% set blars = htmlWebpackPlugin.options.myOptions %}
 
 {% block assets %}
 <link rel="stylesheet" href="assets/css/index.css">
 {% endblock %}
 
-{% block title %}Titulaso{% endblock %}
+{% block title %}Inicio{% endblock %}
 
 {% block content %}
 <main class="container-fluid mt-md-3 px-0 px-md-3">
@@ -24,19 +23,10 @@
         <p>&mdash; Paulo Coelho</p>
       </div>
     </section>
-    <aside id="navbar-menu" class="col pl-md-5">
-      <nav class="nav flex-column">
-        <a class="nav-link active" href="#">Inicio</a>
-        <span class="nav-link">Actividades</span>
-        <span class="nav-link">Horario</span>
-        <span class="nav-link">Técnicos</span>
-        <span class="nav-link">Instalaciones y servicios</span>
-        <span class="nav-link">Localización</span>
-        <span class="nav-link">Precios y promociones</span>
-        <a class="nav-link" href="register.html">Alta de usuarios</a>
-        <span class="nav-link">Foro</span>
-      </nav>
-    </aside>
+    {% include (
+        "includes/navbar-menu-auth.html" if ctx.logged_in
+        else "includes/navbar-menu.html"
+    ) %}
   </div>
 </main>
 {% endblock %}
