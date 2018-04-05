@@ -1,0 +1,22 @@
+{% macro login_form () %}
+<form action="index2.html" method="POST" class="col">
+    <div class="row form-group">
+        <div class="col">
+            <input name="user" type="text" placeholder="Usuario"
+                   class="form-control form-control-sm" aria-label="Usuario" />
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col">
+            <input name="password" type="password" placeholder="Contraseña"
+                   class="form-control form-control-sm" aria-label="Contraseña">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col">
+            <input type="submit" value="Entrar"
+                   class="btn btn-sm btn-primary d-block mx-auto">
+        </div>
+    </div>
+</form>
+{% endmacro %}

@@ -1,3 +1,5 @@
+{% import 'includes/login-form.html' as login_form %}
+
 <header class="bg-dark container-fluid p-3 px-5">
   <div class="row">
     <a href="#" class="col d-block mt-2">
@@ -8,25 +10,22 @@
       <span class="d-lg-none">Lorem Ipsum</span>
       <span class="d-none d-lg-inline huge">Lorem Ipsum</span>
     </h1>
-    <form action="index2.html" method="POST" class="col">
-      <div class="row form-group">
-        <div class="col">
-          <input name="user" type="text" placeholder="Usuario"
-                 class="form-control form-control-sm" aria-label="Usuario" />
+    {% if needs_auth %}
+        {{ login_form.login_form() }}
+    {% else %}
+        <div class="row">
+            <span class="greeting text-muted">
+                Bienvenido,
+                <span class="name">
+                    <a href="profile.html" class="text-light">Usuario</a>
+                </span>
+            </span>
+            <div class="w-100"></div>
+            <br>
+            <a href="logout.html" class="btn btn-lg btn-primary" role="button">
+                Desconectar
+            </a>
         </div>
-      </div>
-      <div class="row form-group">
-        <div class="col">
-          <input name="password" type="password" placeholder="Contraseña"
-                 class="form-control form-control-sm" aria-label="Contraseña">
-        </div>
-      </div>
-      <div class="row form-group">
-        <div class="col">
-          <input type="submit" value="Enviar"
-                 class="btn btn-sm btn-primary d-block mx-auto">
-        </div>
-      </div>
-    </form>
+    {% endif %}
   </div>
 </header>

@@ -1,4 +1,5 @@
 {% set ctx = htmlWebpackPlugin.options %}
+{% set needs_auth = (ctx.not_logged_in or false) %}
 
 <!DOCTYPE html>
 <html lang="es">

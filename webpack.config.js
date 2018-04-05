@@ -49,7 +49,7 @@ module.exports = {
             inject: false,
             showErrors: true,
             template: 'templates/index.njk',
-            logged_in: false,
+            not_logged_in: true,
             lorem: loremContext
         }),
         new HtmlWebpackPlugin({
@@ -57,7 +57,9 @@ module.exports = {
             inject: false,
             showErrors: true,
             template: 'templates/index.njk',
-            logged_in: true,
+            not_logged_in: false,
+            lorem: loremContext
+        }),
             lorem: loremContext
         }),
         // new HtmlWebpackPlugin({
