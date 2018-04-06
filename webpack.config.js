@@ -101,5 +101,12 @@ module.exports = {
             template: 'templates/location.njk',
             lorem: loremContext
         }),
+        new HtmlWebpackPlugin({
+            filename: path.join(builddir, 'tecnicos.html'),
+            inject: false,
+            showErrors: true,
+            template: 'templates/coaches.njk',
+            lorem: loremContext
+        }),
     ]
 };
