@@ -1,81 +1,39 @@
+{% macro footer_column(n) %}
+    <article class="col">
+        <h4>{{ ctx.lorem.lorem_words(2) }}</h4>
+        <ul>
+            {% for i in range(n) %}
+                <li>
+                    <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
+                </li>
+            {% endfor  %}
+        </ul>
+    </article>
+    <div class="w-100 d-md-none"></div>
+{% endmacro  %}
+
 <footer class="container-fluid bg-dark p-3 px-5">
   <div class="row">
-    <article class="col">
-      <h4>{{ ctx.lorem.lorem_words(2) }}</h4>
-      <ul>
-        <li>
-          <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
-        </li>
-        <li>
-          <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
-        </li>
-        <li>
-          <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
-        </li>
-        <li>
-          <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
-        </li>
-        <li>
-          <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
-        </li>
-      </ul>
-    </article>
-    <article class="col">
-      <h4>{{ ctx.lorem.lorem_words(2) }}</h4>
-      <ul>
-        <li>
-          <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
-        </li>
-        <li>
-          <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
-        </li>
-        <li>
-          <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
-        </li>
-        <li>
-          <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
-        </li>
-        <li>
-          <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
-        </li>
-      </ul>
-    </article>
-    <article class="col">
-      <h4>{{ ctx.lorem.lorem_words(2) }}</h4>
-      <ul>
-        <li>
-          <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
-        </li>
-        <li>
-          <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
-        </li>
-        <li>
-          <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
-        </li>
-        <li>
-          <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
-        </li>
-        <li>
-          <a href="#">{{ ctx.lorem.lorem_words(2) }}</a>
-        </li>
-      </ul>
-    </article>
-    <article class="col">
-      <h4>Enlaces de interés</h4>
-      <ul>
-        <li>
-          <a href="#">Contactar</a>
-        </li>
-        <li>
-          <a href="#">Política de cookies</a>
-        </li>
-        <li>
-          <a href="#">Términos y condiciones</a>
-        </li>
-        <li>
-          <a href="centrodeportivo/como_se_hizo.pdf">Cómo se hizo</a>
-        </li>
-      </ul>
-    </article>
+      {{ footer_column(5) }}
+      {{ footer_column(4) }}
+      <div class="w-100 d-lg-none"></div>
+      {{ footer_column(5) }}
+      <article class="col">
+          <h4>Enlaces de interés</h4>
+          <ul>
+              <li>
+                  <a href="#">Contactar</a>
+              </li>
+              <li>
+                  <a href="#">Política de cookies</a>
+              </li>
+              <li>
+                  <a href="#">Términos y condiciones</a>
+              </li>
+              <li>
+                  <a href="centrodeportivo/como_se_hizo.pdf">Cómo se hizo</a>
+              </li>
+          </ul>
+      </article>
   </div>
 </footer>
