@@ -13,7 +13,7 @@
     {% if needs_auth %}
         {{ login_form.login_form() }}
     {% else %}
-        <div class="row">
+        <div id="greeting-container" class="col">
             <span class="greeting text-muted">
                 Bienvenido,
                 <span class="name">
@@ -22,7 +22,7 @@
             </span>
             <div class="w-100"></div>
             <br>
-            <a href="logout.html" class="btn btn-lg btn-primary" role="button">
+            <a href="logout.html" class="btn btn-primary" role="button">
                 Desconectar
             </a>
         </div>
