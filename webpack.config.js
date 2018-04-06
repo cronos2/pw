@@ -60,16 +60,26 @@ module.exports = {
             not_logged_in: false,
             lorem: loremContext
         }),
+        new HtmlWebpackPlugin({
+            filename: path.join(__dirname, '/login.html'),
+            meta: {'_': {
+                'http-equiv': 'refresh',
+                'content': '0; index2.html'
+            }},
+            showErrors: true,
+            title: 'Iniciando sesión'
+        }),
+        new HtmlWebpackPlugin({
+            filename: path.join(__dirname, '/logout.html'),
+            meta: {'_': {
+                'http-equiv': 'refresh',
+                'content': '0; index.html'
+            }},
+            showErrors: true,
+            title: 'Desconectando'
+        }),
             lorem: loremContext
         }),
-        // new HtmlWebpackPlugin({
-        //     filename: path.join(__dirname, '/login.html'),
-        //     template: 'templates/login.html'
-        // }),
-        // new HtmlWebpackPlugin({
-        //     filename: path.join(__dirname, '/logout.html'),
-        //     template: 'templates/logout.html'
-        // }),
         // new HtmlWebpackPlugin({
         //     context: defaultContext,
         //     filename: path.join(__dirname, '/register.html'),
