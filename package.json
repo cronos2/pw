@@ -14,7 +14,8 @@
     "webpack-cli": "^2.0.13"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "watch": "npx webpack --watch --progress --colors --mode development",
+      "build": "npx webpack --progress --colors --mode production"
   },
   "author": "Nacho Mas",
   "license": "ISC"
