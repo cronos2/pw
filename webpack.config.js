@@ -94,5 +94,12 @@ module.exports = {
             template: 'templates/activity-detail.njk',
             lorem: loremContext
         }),
+        new HtmlWebpackPlugin({
+            filename: path.join(builddir, 'localizacion.html'),
+            inject: false,
+            showErrors: true,
+            template: 'templates/location.njk',
+            lorem: loremContext
+        }),
     ]
 };
