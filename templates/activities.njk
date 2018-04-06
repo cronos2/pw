@@ -1,0 +1,52 @@
+{% extends "__layout.njk" %}
+
+{% block assets %}
+<link rel="stylesheet" href="assets/css/activities.css">
+{% endblock %}
+
+{% block title %}Actividades{% endblock %}
+
+{% macro activity_item(title_length, new=false) %}
+<article class="activity-item row">
+  <section class="col col-md-4 col-lg-2 activity-thumb">
+    <img src="http://picsum.photos/150?random" alt="Imagen de la actividad">
+  </section>
+  <div class="w-100 d-md-none"></div>
+  <section class="col offset-md-1 activity-summary mt-4 mt-md-0">
+    <h1>{{ ctx.lorem.lorem_words(title_length) }}</h1>
+    {% if new %}
+    <div class="w-100 d-lg-none"></div>
+    <span class="badge badge-pill badge-warning ml-lg-3 mb-3 mb-lg-0">
+      ¡NOVEDAD!
+    </span>
+    {% endif %}
+    <p>{{ ctx.lorem.lorem({ count: 1, units: 'sentences' }) }}</p>
+    <a href="activity-detail.html">Descripción detallada</a>
+  </section>
+</article>
+{% endmacro %}
+
+{% block content %}
+<main class="container-fluid my-5 px-5">
+  <div class="row">
+    <section class="col-md-8" id="activity-list">
+      {{ activity_item(2, new=true) }}
+      {{ activity_item(2, new=true) }}
+      {{ activity_item(3) }}
+      {{ activity_item(4) }}
+      {{ activity_item(1) }}
+    </section>
+    <hr class="w-100 d-md-none">
+    <aside id="news" class="col mb-md-4">
+      <h1 class="mb-3">Últimas noticias</h1>
+      <a href="https://twitter.com/Twitter?ref_src=twsrc%5Etfw"
+         class="twitter-timeline"
+         data-dnt="true" data-theme="light" data-height="600">
+        Tweets by Twitter
+      </a>
+      <script async src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"></script>
+    </aside>
+  </div>
+</main>
+{% endblock %}

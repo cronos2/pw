@@ -78,12 +78,14 @@ module.exports = {
             showErrors: true,
             title: 'Desconectando'
         }),
+        new HtmlWebpackPlugin({
+            filename: path.join(__dirname, 'activities.html'),
+            inject: false,
+            showErrors: true,
+            template: 'templates/activities.njk',
             lorem: loremContext
         }),
-        // new HtmlWebpackPlugin({
-        //     context: defaultContext,
-        //     filename: path.join(__dirname, '/register.html'),
-        //     template: 'templates/register.njk'
-        // }),
+            lorem: loremContext
+        }),
     ]
 };
