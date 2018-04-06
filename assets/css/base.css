@@ -6,6 +6,10 @@ header .row {
   align-items: center;
 }
 
+#greeting-container {
+  text-align: center;
+}
+
 .huge {
   font-size: 4rem;
 }
