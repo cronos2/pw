@@ -85,6 +85,11 @@ module.exports = {
             template: 'templates/activities.njk',
             lorem: loremContext
         }),
+        new HtmlWebpackPlugin({
+            filename: path.join(__dirname, 'activity-detail.html'),
+            inject: false,
+            showErrors: true,
+            template: 'templates/activity-detail.njk',
             lorem: loremContext
         }),
     ]
