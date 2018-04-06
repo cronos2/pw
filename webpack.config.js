@@ -10,6 +10,8 @@ const loremContext = {
     }
 };
 
+const builddir = path.join(__dirname, 'dist');
+
 
 module.exports = {
     context: __dirname,
@@ -45,7 +47,7 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            filename: path.join(__dirname, '/index.html'),
+            filename: path.join(builddir, 'index.html'),
             inject: false,
             showErrors: true,
             template: 'templates/index.njk',
@@ -53,7 +55,7 @@ module.exports = {
             lorem: loremContext
         }),
         new HtmlWebpackPlugin({
-            filename: path.join(__dirname, '/index2.html'),
+            filename: path.join(builddir, 'index2.html'),
             inject: false,
             showErrors: true,
             template: 'templates/index.njk',
@@ -61,7 +63,7 @@ module.exports = {
             lorem: loremContext
         }),
         new HtmlWebpackPlugin({
-            filename: path.join(__dirname, '/login.html'),
+            filename: path.join(builddir, 'login.html'),
             meta: {'_': {
                 'http-equiv': 'refresh',
                 'content': '0; index2.html'
@@ -70,7 +72,7 @@ module.exports = {
             title: 'Iniciando sesión'
         }),
         new HtmlWebpackPlugin({
-            filename: path.join(__dirname, '/logout.html'),
+            filename: path.join(builddir, 'logout.html'),
             meta: {'_': {
                 'http-equiv': 'refresh',
                 'content': '0; index.html'
@@ -79,14 +81,14 @@ module.exports = {
             title: 'Desconectando'
         }),
         new HtmlWebpackPlugin({
-            filename: path.join(__dirname, 'activities.html'),
+            filename: path.join(builddir, 'activities.html'),
             inject: false,
             showErrors: true,
             template: 'templates/activities.njk',
             lorem: loremContext
         }),
         new HtmlWebpackPlugin({
-            filename: path.join(__dirname, 'activity-detail.html'),
+            filename: path.join(builddir, 'activity-detail.html'),
             inject: false,
             showErrors: true,
             template: 'templates/activity-detail.njk',
