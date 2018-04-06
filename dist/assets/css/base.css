@@ -1,0 +1,29 @@
+header, footer {
+  color: white;
+}
+
+header .row {
+  align-items: center;
+}
+
+#greeting-container {
+  text-align: center;
+}
+
+.huge {
+  font-size: 4rem;
+}
+
+footer h4 {
+  text-transform: uppercase;
+}
+
+footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+footer li a {
+  color: #f8f9fa!important;
+  text-transform: capitalize;
+}

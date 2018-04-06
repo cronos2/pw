@@ -1,0 +1,33 @@
+.activity-title {
+  text-transform: capitalize;
+}
+
+#activity-menu h1 {
+  text-align: center;
+}
+
+#activity-menu ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+li.nav-item {
+  margin: 2rem 0;
+}
+
+.nav-link {
+  display: inline;
+  margin-top: .15rem;
+}
+
+@media (min-width: 992px) {
+  .badge {
+    position: absolute;
+    margin-top: 2px !important;
+  }
+}
+
+.badge {
+  margin-top: 15px;
+}
