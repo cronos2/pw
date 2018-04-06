@@ -1,0 +1,25 @@
+{% extends "__layout.njk" %}
+
+{% block assets %}
+<link rel="stylesheet" href="assets/css/coach-detail.css">
+{% endblock %}
+
+{% block title %}{{ ctx.lorem.lorem_words(2) }}{% endblock %}
+
+{% block content %}
+<main class="container-fluid my-5 px-5">
+  <div class="row">
+    <section class="col" id="coach-container">
+      <h1 class="coach-name">{{ ctx.lorem.lorem_words(2) }}</h1>
+      <img src="http://picsum.photos/800/400?random"
+           alt="Foto del técnicx"
+           class="my-5 mw-100">
+      {% for _ in range(2) %}
+          <p>
+              {{ ctx.lorem.lorem({ units: 'paragraphs', count: 1 }) }}
+          </p>
+      {% endfor %}
+    </section>
+  </div>
+</main>
+{% endblock %}
