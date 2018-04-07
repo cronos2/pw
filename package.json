@@ -15,7 +15,7 @@
   },
   "scripts": {
       "watch": "npx webpack --watch --progress --colors --mode development",
-      "build": "npx webpack --progress --colors --mode production; cp assets dist;",
+      "build": "npx webpack --progress --colors --mode production; cp -r assets dist;",
       "push": "git subtree push --prefix dist origin gh-pages"
   },
   "author": "Nacho Mas",
