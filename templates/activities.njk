@@ -27,26 +27,28 @@
 {% endmacro %}
 
 {% block content %}
-<main class="container-fluid my-5 px-5">
-  <div class="row">
-    <section class="col-md-8" id="activity-list">
-      {{ activity_item(2, new=true) }}
-      {{ activity_item(2, new=true) }}
-      {{ activity_item(3) }}
-      {{ activity_item(4) }}
-      {{ activity_item(1) }}
-    </section>
-    <hr class="w-100 d-md-none">
-    <aside id="news" class="col mb-md-4">
-      <h1 class="mb-3">Últimas noticias</h1>
-      <a href="https://twitter.com/Twitter?ref_src=twsrc%5Etfw"
-         class="twitter-timeline"
-         data-dnt="true" data-theme="light" data-height="600">
-        Tweets by Twitter
-      </a>
-      <script async src="https://platform.twitter.com/widgets.js"
-              charset="utf-8"></script>
-    </aside>
-  </div>
-</main>
+    {% set current = 'activities' %}
+    {% include 'includes/navbar-menu-horizontal.njk' %}
+    <main class="container-fluid my-5 px-5">
+        <div class="row">
+            <section class="col-md-8" id="activity-list">
+                {{ activity_item(2, new=true) }}
+                {{ activity_item(2, new=true) }}
+                {{ activity_item(3) }}
+                {{ activity_item(4) }}
+                {{ activity_item(1) }}
+            </section>
+            <hr class="w-100 d-md-none">
+            <aside id="news" class="col mb-md-4">
+                <h1 class="mb-3">Últimas noticias</h1>
+                <a href="https://twitter.com/Twitter?ref_src=twsrc%5Etfw"
+                   class="twitter-timeline"
+                   data-dnt="true" data-theme="light" data-height="600">
+                    Tweets by Twitter
+                </a>
+                <script async src="https://platform.twitter.com/widgets.js"
+                        charset="utf-8"></script>
+            </aside>
+        </div>
+    </main>
 {% endblock %}
