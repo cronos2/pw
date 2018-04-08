@@ -1,0 +1,38 @@
+{% macro navbar_link(href, text, active) %}
+    <a class="nav-item nav-link {{ 'active' if active }}" href="{{ href }}">
+        {{ text }}
+        {% if active %}
+            <span class="sr-only">(current)
+        {% endif %}
+    </a>
+{% endmacro %}
+
+{{ navbar_link('index.html', 'Inicio', current == 'index' ) }}
+{{ navbar_link(
+    'actividades.html', 'Actividades', current == 'activities'
+) }}
+{{ navbar_link(
+    'horario.html', 'Horario', current == 'timetable'
+) }}
+{{ navbar_link(
+    'tecnicos.html', 'Técnicos', current == 'coaches'
+) }}
+{{ navbar_link(
+    'servicios.html', 'Instalaciones y servicios',
+    current == 'services'
+) }}
+{{ navbar_link(
+    'localizacion.html', 'Localización', current == 'location'
+) }}
+{{ navbar_link(
+    'promociones.html', 'Precios y promociones',
+    current == 'promotions'
+) }}
+{{ navbar_link(
+    'registro.html', 'Alta de usuarios',
+    current == 'register'
+) }}
+{{ navbar_link(
+    'foro.html', 'Foro',
+    current == 'forum'
+) }}
