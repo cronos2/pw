@@ -1,25 +1,72 @@
 {% extends "__layout.njk" %}
 
 {% block assets %}
-<link rel="stylesheet" href="assets/css/coach-detail.css">
+    <link rel="stylesheet" href="assets/css/coach-detail.css">
+    <link rel="stylesheet" href="assets/css/timetable.css">
 {% endblock %}
 
 {% block title %}{{ ctx.lorem.lorem_words(2) }}{% endblock %}
 
+{% macro timetable_row(hour, activities) %}
+    <tr>
+        <td class="hr d-none d-lg-table-cell">{{ hour }}</td>
+        {% for activity in activities %}
+            {{ timetable_cell(activity) }}
+        {% endfor %}
+    </tr>
+{% endmacro %}
+
+{% macro timetable_cell(activity=null) %}
+    <td class="dy element {{ activity.class or '' }}">
+        {% if activity %}
+            <a href="actividad-detail.html">
+                <span class="element-data">
+                    {{ activity.time_range}}
+                </span>
+                <br>
+                <span class="element-activity">
+                    {{ ctx.lorem.lorem_words(2) }}
+                </span>
+            </a>
+        {% endif %}
+    </td>
+{% endmacro %}
+
 {% block content %}
-<main class="container-fluid my-5 px-5">
-  <div class="row">
-    <section class="col" id="coach-container">
-      <h1 class="coach-name">{{ ctx.lorem.lorem_words(2) }}</h1>
-      <img src="http://picsum.photos/800/400?random"
-           alt="Foto del técnicx"
-           class="my-5 mw-100">
-      {% for _ in range(2) %}
-          <p>
-              {{ ctx.lorem.lorem({ units: 'paragraphs', count: 1 }) }}
-          </p>
-      {% endfor %}
-    </section>
-  </div>
-</main>
+    {% include 'includes/navbar-menu-horizontal.njk' %}
+    <main class="container-fluid my-5 px-5">
+        <div class="row">
+            <section class="col" id="coach-container">
+                <h1 class="coach-name">{{ ctx.lorem.lorem_words(2) }}</h1>
+                <img src="http://picsum.photos/800/400?random"
+                     alt="Foto del técnicx"
+                     class="my-5 mw-100">
+                {% for _ in range(2) %}
+                    <p>
+                        {{ ctx.lorem.lorem({ units: 'paragraphs', count: 1 }) }}
+                    </p>
+                {% endfor %}
+            </section>
+            <div class="w-100"></div>
+            <table id="timetable">
+                <thead>
+                    <tr>
+                        <th class="hr d-none d-lg-table-cell"></th>
+                        <th class="dy">Lunes</th>
+                        <th class="dy">Martes</th>
+                        <th class="dy">Miércoles</th>
+                        <th class="dy">Jueves</th>
+                        <th class="dy">Viernes</th>
+                        <th class="dy">Sábado</th>
+                        <th class="dy">Domingo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in ctx.timetable %}
+                        {{ timetable_row(row.start, row.activities) }}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
 {% endblock %}
