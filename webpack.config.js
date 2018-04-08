@@ -125,5 +125,13 @@ module.exports = {
             template: 'templates/promotions.njk',
             lorem: loremContext
         }),
+        new HtmlWebpackPlugin({
+            filename: path.join(builddir, 'horario.html'),
+            inject: false,
+            showErrors: true,
+            template: 'templates/timetable.njk',
+            lorem: loremContext,
+            timetable: timetable
+        })
     ]
 };
