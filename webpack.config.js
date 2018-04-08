@@ -81,14 +81,14 @@ module.exports = {
             title: 'Desconectando'
         }),
         new HtmlWebpackPlugin({
-            filename: path.join(builddir, 'activities.html'),
+            filename: path.join(builddir, 'actividades.html'),
             inject: false,
             showErrors: true,
             template: 'templates/activities.njk',
             lorem: loremContext
         }),
         new HtmlWebpackPlugin({
-            filename: path.join(builddir, 'activity-detail.html'),
+            filename: path.join(builddir, 'actividad-detail.html'),
             inject: false,
             showErrors: true,
             template: 'templates/activity-detail.njk',
