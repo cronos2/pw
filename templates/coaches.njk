@@ -35,13 +35,15 @@
 {% endmacro  %}
 
 {% block content %}
-<main class="container-fluid my-5 px-5">
-  <div class="row">
-      <section class="col" id="coach-list">
-          {% for _ in range(3) %}
-              {{ coach_row() }}
-          {% endfor %}
-    </section>
-  </div>
-</main>
+    {% set current = 'coaches' %}
+    {% include 'includes/navbar-menu-horizontal.njk' %}
+    <main class="container-fluid my-5 px-5">
+        <div class="row">
+            <section class="col" id="coach-list">
+                {% for _ in range(3) %}
+                    {{ coach_row() }}
+                {% endfor %}
+            </section>
+        </div>
+    </main>
 {% endblock %}
