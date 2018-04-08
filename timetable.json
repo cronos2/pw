@@ -1,0 +1,64 @@
+[
+    {
+        "start": "09:00",
+        "activities": [
+            null,
+            null,
+            {"time_range": "09:15 - 09:45", "class": "bg-warning"},
+            null,
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "start": "10:00",
+        "activities": [
+            null,
+            {"time_range": "10:15 - 10:45", "class": "bg-warning"},
+            null,
+            {"time_range": "10:00 - 10:55", "class": "bg-primary"},
+            {"time_range": "10:00 - 10:55", "class": "bg-danger"},
+            null,
+            null,
+            null
+        ]
+    },
+    {
+        "start": "11:00",
+        "activities": [
+            null,
+            null,
+            {"time_range": "11:00 - 11:55", "class": "bg-primary"},
+            null,
+            {"time_range": "11:00 - 11:55", "class": "bg-danger"},
+            null,
+            {"time_range": "11:00 - 11:30", "class": "bg-success"},
+            null
+        ]
+    },
+    {
+        "start": "12:00",
+        "activities": [
+            {"time_range": "12:00 - 12:55", "class": "bg-warning"},
+            {"time_range": "12:00 - 12:55", "class": "bg-success"},
+            null,
+            {"time_range": "12:15 - 12:40", "class": "bg-primary"},
+            {"time_range": "12:00 - 12:55", "class": "bg-danger"},
+            null,
+            {"time_range": "12:00 - 12:30", "class": "bg-success"}
+        ]
+    },
+    {
+        "start": "13:00",
+        "activities": [
+            null,
+            {"time_range": "13:00 - 13:35", "class": "bg-primary"},
+            null,
+            {"time_range": "13:15 - 13:45", "class": "bg-danger"},
+            null,
+            {"time_range": "13:20 - 13:50", "class": "bg-success"},
+            null
+        ]
+    }
+]

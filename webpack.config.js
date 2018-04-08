@@ -3,6 +3,8 @@ const path = require('path');
 const webpack = require('webpack');
 const loremIpsum = require('lorem-ipsum');
 
+const timetable = require('./timetable.json');
+
 const loremContext = {
     lorem: loremIpsum,
     lorem_words: function(n){
@@ -113,6 +115,7 @@ module.exports = {
             inject: false,
             showErrors: true,
             template: 'templates/coach-detail.njk',
+            timetable: timetable
             lorem: loremContext
         }),
     ]
