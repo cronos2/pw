@@ -25,4 +25,12 @@ q {
 
 #navbar-menu {
   font-size: 1.5rem;
+  text-align: center;
 }
+
+#navbar-menu .nav-link {
+  border-bottom: 1px solid #d8d8d8;
+}
+
+#navbar-menu .nav-link:last-child {
+  border: 0;
