@@ -1,0 +1,42 @@
+{% extends "__layout.njk" %}
+
+{% block assets %}
+    <link rel="stylesheet" href="assets/css/promotions.css">
+{% endblock %}
+
+{% block title %}Inicio{% endblock %}
+
+{% macro pricing_column(color_class) %}
+    <div class="col col-sm-6 col-md-3">
+        <ul class="pricing">
+            <li>
+                <h1 class="text-{{ color_class }}">
+                    {{ ctx.lorem.lorem_words(1) }}
+                </h1>
+            </li>
+            {% for _ in range(4) %}
+                <li>{{ ctx.lorem.lorem_words(2) }}</li>
+            {% endfor %}
+            <li class="price">
+                <h2 class="text-{{ color_class }}">29.99€</h2>
+                <span>al mes</span>
+            </li>
+            <li>
+                <button class="bg-{{ color_class }}">Inscríbeme</button>
+            </li>
+        </ul>
+    </div>
+{% endmacro %}
+
+{% block content %}
+    {% set current = 'promotions' %}
+    {% include 'includes/navbar-menu-horizontal.njk' %}
+    <main class="container-fluid mt-md-3 px-0 px-md-3">
+        <div class="row my-3">
+                {{ pricing_column('success') }}
+                {{ pricing_column('warning') }}
+                {{ pricing_column('danger') }}
+                {{ pricing_column('info') }}
+        </div><!-- /row -->
+    </main>
+{% endblock %}

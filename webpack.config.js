@@ -115,7 +115,14 @@ module.exports = {
             inject: false,
             showErrors: true,
             template: 'templates/coach-detail.njk',
+            lorem: loremContext,
             timetable: timetable
+        }),
+        new HtmlWebpackPlugin({
+            filename: path.join(builddir, 'promociones.html'),
+            inject: false,
+            showErrors: true,
+            template: 'templates/promotions.njk',
             lorem: loremContext
         }),
     ]
