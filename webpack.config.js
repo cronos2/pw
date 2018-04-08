@@ -132,6 +132,12 @@ module.exports = {
             template: 'templates/timetable.njk',
             lorem: loremContext,
             timetable: timetable
+        }),
+        new HtmlWebpackPlugin({
+            filename: path.join(builddir, 'registro.html'),
+            inject: false,
+            showErrors: true,
+            template: 'templates/register.njk'
         })
     ]
 };

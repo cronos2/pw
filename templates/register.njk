@@ -1,0 +1,135 @@
+{% extends "__layout.njk" %}
+
+{% block assets %}
+    <link rel="stylesheet" href="assets/css/glyphicons.css">
+    <link rel="stylesheet" href="assets/css/register.css">
+{% endblock %}
+
+{% block title %}Alta de usuario{% endblock %}
+
+{% block content %}
+    {% include 'includes/navbar-menu-horizontal.njk' %}
+    <main class="container-fluid my-5 px-5">
+        <div class="row">
+            <form id="register-form" class="col"
+                  action="registro.html" method="POST"
+            >
+                <div class="form-row">
+                    <div class="col">
+                        <label for="name-input">Nombre</label>
+                        <input id="name-input" type="text"
+                               name="name" class="form-control form-control-lg"
+                               required>
+                    </div>
+                    <div class="w-100 d-md-none"></div>
+                    <div class="col">
+                        <label for="surname-input">Apellidos</label>
+                        <input id="surname-input" type="text"
+                               name="surname" class="form-control form-control-lg"
+                               required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="dni-input">DNI</label>
+                    <input id="dni-input" type="text"
+                           name="dni" class="form-control form-control-lg"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="email-input">Correo electrónico</label>
+                    <input id="email-input" type="email"
+                           name="email" class="form-control form-control-lg"
+                           required>
+                </div>
+                <div class="form-group d-flex">
+                    <label class="mb-0">Sexo</label>
+                    <div class="form-check form-check-inline">
+                        <input id="male-input" type="radio"
+                               name="gender" class="form-check-input"
+                               required
+                        >
+                        <label for="male-input" class="form-check-label">
+                            Masculino
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input id="female-input" type="radio"
+                               name="gender" class="form-check-input"
+                               required
+                        >
+                        <label for="female-input" class="form-check-label">
+                            Femenino
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="birthdate-input">Fecha de nacimiento</label>
+                    <input id="birthdate-input" type="date"
+                           name="birthdate" class="form-control form-control-lg"
+                           required>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="telephone-input">
+                            Teléfono fijo
+                        </label>
+                        <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <span class="glyphicon glyphicon-phone-alt">
+                                    </span>
+                                </div>
+                            </div>
+                            <input id="telephone-input" type="text"
+                                   name="telephone_number"
+                                   placeholder="XXX-XXX-XXX"
+                                   class="form-control form-control-lg"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="w-100 d-md-none"></div>
+                    <div class="col">
+                        <label for="mobile-input">
+                            Teléfono móvil
+                        </label>
+                        <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <span class="glyphicon glyphicon-earphone">
+                                    </span>
+                                </div>
+                            </div>
+                            <input id="mobile-input" type="text"
+                                   name="mobile_number"
+                                   placeholder="XXX-XXX-XXX"
+                                   class="form-control form-control-lg"
+                                   required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-check">
+                        <input id="tc-input" type="checkbox"
+                               name="tc" class="form-check-input"
+                               required
+                        >
+                        <label for="tc-input" class="form-check-label">
+                            He leído y acepto los
+                            <a href="#">
+                                Términos generales, condiciones
+                                de alta y normativa general de la instalación
+                            </a>.
+                        </label>
+                    </div>
+                </div>
+                <div class="form-row justify-content-around align-items-center">
+                    <input type="submit" value="Registrar"
+                           class="btn btn-lg btn-primary">
+                    <input type="reset" value="Reiniciar formulario"
+                           class="btn"
+                    >
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}
