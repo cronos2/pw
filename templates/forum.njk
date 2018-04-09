@@ -104,43 +104,7 @@
                     {% endfor %}
                 </section>
                 <hr class="w-100 d-md-none">
-                <aside id="menu" class="col mb-md-4">
-                    <div class="card">
-                        <h5 class="card-title">Categorías</h5>
-                        <hr class="w-100 mt-0">
-                        <ul id="categories">
-                            {% for _ in range(6) %}
-                                <li>
-                                    <a href="#">
-                                        {{
-                                        ctx.lorem.lorem_words([2, 3] | random )
-                                        }}
-                                        <span class="badge badge-pill badge-dark">
-                                            {{ range(10, 50) | random }}
-                                        </span>
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h5 class="card-title">Hilos recientes</h5>
-                        <ul id="hot-threads">
-                            {% for _ in range(6) %}
-                                <li>
-                                    <a href="#">
-                                        {{
-                                        ctx.lorem.lorem_words(
-                                            range(4, 7) | random
-                                        )
-                                        }}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-
-                </aside>
+                {% include 'includes/forum-aside.njk' %}
             </div>
         </div>
         <div class="container">
