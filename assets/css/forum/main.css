@@ -23,7 +23,7 @@ main {
 }
 
 #profile-link:hover {
-  text-decotarion: none;
+  text-decoration: none;
 }
 
 #avatar {
@@ -58,6 +58,10 @@ main {
   text-decoration: none;
 }
 
+.paginator .arrow {
+  text-align: center;
+}
+
 .arrow a {
   color: #cfd5d7;
 }
@@ -73,7 +77,7 @@ main {
   padding: 1.5rem;
 }
 
-.thread .user-info .avatar {
+.user-info .avatar {
   display: block;
   margin: auto;
 }
@@ -153,4 +157,11 @@ main {
 #hot-threads li {
   border-top: 1px solid #f1f1f1;
   padding: 1rem 0;
+}
+
+.author {
+  color: #6c757d;
+  font-size: .8rem;
+  margin-top: 1rem;
+  text-align: center;
 }
