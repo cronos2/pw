@@ -34,13 +34,13 @@
                             })
                         ) }}
                     {% endfor %}
+                    {% include 'includes/comment-editor.njk' %}
                 </section>
                 <hr class="w-100 d-lg-none">
                 {% include 'includes/forum-aside.njk' %}
             </div>
         </div>
         <div class="container">
-            {% include 'includes/thread-editor.njk' %}
             <div class="row no-gutters">
                 <div class="col col-lg-8">
                     {{ paginator('paginator-bottom') }}
