@@ -8,6 +8,7 @@
 {% block title %}Alta de usuario{% endblock %}
 
 {% block content %}
+    {% set current = 'register' %}
     {% include 'includes/navbar-menu-horizontal.njk' %}
     <main class="container-fluid my-5 px-5">
         <div class="row">
@@ -129,7 +130,8 @@
                            class="btn"
                     >
                 </div>
-            </section>
+            </form>
+
         </div>
     </main>
 {% endblock %}
