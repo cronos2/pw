@@ -22,8 +22,21 @@ main {
   text-decoration: none;
 }
 
+#profile-link:hover {
+  text-decotarion: none;
+}
+
 #avatar {
   margin-right: 1rem;
+}
+
+.paginator {
+  margin: 1rem 0;
+}
+
+.paginator ul {
+  display: flex;
+  justify-content: space-around;
 }
 
 .paginator li a {
@@ -65,6 +78,10 @@ main {
   margin: auto;
 }
 
+.user-info, .thread-info {
+  padding: 0;
+}
+
 .thread-title a {
   color: #333;
 }
@@ -101,7 +118,7 @@ main {
   border-bottom: 1px solid #f1f1f1;
   color: #9da6aa;
   font-size: .8rem;
-  padding: .5rem 1rem;
+  padding: .5rem 0;
   text-align: center;
 }
 
