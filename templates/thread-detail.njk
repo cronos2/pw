@@ -2,13 +2,14 @@
 
 {% block assets %}
     <link rel="stylesheet" href="assets/css/forum/main.css">
-    <link rel="stylesheet" href="assets/css/forum/new-thread.css">
     <link rel="stylesheet" href="assets/css/forum/thread-detail.css">
 
     <link rel="stylesheet" href="assets/css/glyphicons.css">
 {% endblock %}
 
-{% block title %}Foro{% endblock %}
+{% block title %}
+    {{ ctx.lorem.lorem({ count: 1, units: 'sentences'}) }}
+{% endblock %}
 
 {% from 'forum-utils.njk' import paginator, thread, thread_comment %}
 
@@ -29,6 +30,7 @@
                 <section class="col col-lg-8" id="thread-comments">
                     {% for _ in range(5) %}
                         {{ thread_comment(
+                            author=ctx.lorem.lorem_words(1),
                             content=ctx.lorem.lorem({
                                 'count': 1, 'units': 'paragraphs'
                             })
