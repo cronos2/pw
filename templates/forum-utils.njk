@@ -43,7 +43,7 @@
     </div>
 {% endmacro %}
 
-{% macro thread(title, summary) %}
+{% macro thread(author, title, summary) %}
     <article class="row thread">
         <section class="col-2 user-info">
             <a href="perfil.html">
@@ -51,6 +51,7 @@
                      alt="Avatar del usuario"
                      class="rounded-circle avatar">
             </a>
+            <p class="author">@{{ author }}</p>
         </section>
         <section class="col-8 thread-content">
             <h6 class="thread-title">
@@ -80,16 +81,17 @@
     </article>
 {% endmacro %}
 
-{% macro thread_comment(content) %}
+{% macro thread_comment(author, content) %}
     <article class="row thread-comment">
-        <section class="col-2 user-info">
+        <section class="col-4 col-md-2 user-info">
             <a href="perfil.html">
                 <img src="http://picsum.photos/50?random"
                      alt="Avatar del usuario"
                      class="rounded-circle avatar">
             </a>
+            <p class="author">@{{ author }}</p>
         </section>
-        <section class="col-10 comment-content">
+        <section class="col-8 col-md-10 comment-content">
             <p class="text-muted">
                 {{ content }}
             </p>
@@ -97,32 +99,33 @@
         <div class="w-100"></div>
         <section
             class="w-100 row no-gutters comment-info justify-content-around">
-            <div class="col-1">
+            <div class="col col-md-1">
                 <button class="btn btn-outline-success">
                     <span class="glyphicon glyphicon-thumbs-up"></span>
                     {{ range(1, 50) | random }}
                 </button>
             </div>
-            <div class="col-1">
+            <div class="col col-md-1">
                 <button class="btn btn-outline-danger">
                     <span class="glyphicon glyphicon-thumbs-down"></span>
                     {{ range(1, 50) | random }}
                 </button>
             </div>
-            <div class="col-1">
+            <div class="col col-md-1">
                 <button title="Reportar" class="btn btn-outline-warning">
                     <span class="glyphicon glyphicon-flag"></span>
                 </button>
             </div>
+            <div class="w-100 d-md-none my-2 my-md-0"></div>
             <div class="col-1"></div>
-            <div class="col-1">
+            <div class="col col-md-1">
                 <button title="Responder" class="btn btn-outline-info">
                     <span class="glyphicon glyphicon-share-alt"></span>
                     Responder
                 </button>
             </div>
             <div class="col-1"></div>
-            <div class="col-2">
+            <div class="col col-md-2">
                 <span class="glyphicon glyphicon-time"></span>
                 {{ range(10, 50) | random }}min
             </div>
