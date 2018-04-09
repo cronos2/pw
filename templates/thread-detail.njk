@@ -1,0 +1,47 @@
+{% extends "__layout.njk" %}
+
+{% block assets %}
+    <link rel="stylesheet" href="assets/css/forum/main.css">
+    <link rel="stylesheet" href="assets/css/forum/new-thread.css">
+    <link rel="stylesheet" href="assets/css/forum/thread-detail.css">
+
+    <link rel="stylesheet" href="assets/css/glyphicons.css">
+{% endblock %}
+
+{% block title %}Foro{% endblock %}
+
+{% from 'forum-utils.njk' import paginator, thread, thread_comment %}
+
+{% block content %}
+    {% set current = 'forum' %}
+    {% include 'includes/navbar-menu-horizontal.njk' %}
+    <main class="container-fluid">
+        {% include 'includes/headernav.njk' %}
+        <div class="container">
+            {{ paginator('paginator-top') }}
+        </div>
+        <div class="container">
+            <div class="row">
+                <section class="col col-lg-8" id="thread-comments">
+                    {% for _ in range(5) %}
+                        {{ thread_comment(
+                            content=ctx.lorem.lorem({
+                                'count': 1, 'units': 'paragraphs'
+                            })
+                        ) }}
+                    {% endfor %}
+                </section>
+                <hr class="w-100 d-lg-none">
+                {% include 'includes/forum-aside.njk' %}
+            </div>
+        </div>
+        </div>
+        <div class="container">
+            {{ paginator('paginator-bottom') }}
+        </div>
+        <div class="container">
+            {% include 'includes/thread-editor.njk' %}
+        </div>
+        <br> <!-- ugly hack to fix background / margin issues -->
+    </main>
+{% endblock %}
