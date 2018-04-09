@@ -7,86 +7,7 @@
 
 {% block title %}Foro{% endblock %}
 
-{% macro paginator(id, n=9, current=4) %}
-    <div id="{{ id }}" class="row paginator">
-        <div class="col-2 text-right arrow">
-            <a href="#">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-        </div>
-        <div class="col-8 col-lg-6">
-            <ul class="list-inline">
-                {% for i in range(1, current - 2) %}
-                    <li class="list-inline-item d-none d-md-block">
-                        <a href="#"
-                           {% if i == current %} class="active" {% endif %}>
-                            {{ i }}
-                        </a>
-                    </li>
-                {% endfor %}
-
-                {% for i in range(current - 2, current + 3) %}
-                    <li class="list-inline-item">
-                        <a href="#"
-                           {% if i == current %} class="active" {% endif %}>
-                            {{ i }}
-                        </a>
-                    </li>
-                {% endfor %}
-
-                {% for i in range(current + 3, n + 1) %}
-                    <li class="list-inline-item d-none d-md-block">
-                        <a href="#"
-                           {% if i == current %} class="active" {% endif %}>
-                            {{ i }}
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="col-2 arrow">
-            <a href="#">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-        </div>
-    </div>
-{% endmacro %}
-
-{% macro thread() %}
-    <article class="row thread">
-        <section class="col-2 user-info">
-            <a href="perfil.html">
-                <img src="http://picsum.photos/50?random" alt="Avatar del usuario"
-                     class="rounded-circle avatar">
-            </a>
-        </section>
-        <section class="col-8 thread-content">
-            <h6 class="thread-title">
-                <a href="#">
-                    {{ ctx.lorem.lorem_words(5) }}
-                </a>
-            </h6>
-            <p class="text-muted">
-                {{ ctx.lorem.lorem({ 'count': 1, 'units': 'sentences' }) }}
-            </p>
-        </section>
-        <section class="col-2 thread-info">
-            <div class="comments">
-                <div class="comments-container">
-                    {{ range(50, 100) | random }}
-                </div>
-            </div>
-            <div class="views">
-                <span class="glyphicon glyphicon-eye-open"></span>
-                {{ range(100, 2000) | random }}
-            </div>
-            <div class="time">
-                <span class="glyphicon glyphicon-time"></span>
-                {{ range(10, 50) | random }} min
-            </div>
-        </section>
-    </article>
-{% endmacro %}
+{% from 'forum-utils.njk' import paginator, thread %}
 
 {% block content %}
     {% set current = 'forum' %}
@@ -100,17 +21,23 @@
             <div class="row">
                 <section class="col col-lg-8" id="threads-list">
                     {% for _ in range(5) %}
-                        {{ thread() }}
+                        {{ thread(
+                            title=ctx.lorem.lorem_words(5),
+                            summary=ctx.lorem.lorem({
+                                'count': 1, 'units': 'sentences'
+                            })
+                        ) }}
+
                     {% endfor %}
                 </section>
-                <hr class="w-100 d-md-none">
+                <hr class="w-100 d-lg-none">
                 {% include 'includes/forum-aside.njk' %}
             </div>
         </div>
-    </div>
-    <div class="container">
-        {{ paginator('paginator-bottom') }}
-    </div>
-    <br> <!-- ugly hack to fix background / margin issues -->
+        </div>
+        <div class="container">
+            {{ paginator('paginator-bottom') }}
+        </div>
+        <br> <!-- ugly hack to fix background / margin issues -->
     </main>
 {% endblock %}

@@ -1,0 +1,131 @@
+{% macro paginator(id, n=9, current=4) %}
+    <div id="{{ id }}" class="row paginator">
+        <div class="col-2 text-right arrow">
+            <a href="#">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+        </div>
+        <div class="col-8 col-lg-6">
+            <ul class="list-inline">
+                {% for i in range(1, current - 2) %}
+                    <li class="list-inline-item d-none d-md-block">
+                        <a href="#"
+                           {% if i == current %} class="active" {% endif %}>
+                            {{ i }}
+                        </a>
+                    </li>
+                {% endfor %}
+
+                {% for i in range(current - 2, current + 3) %}
+                    <li class="list-inline-item">
+                        <a href="#"
+                           {% if i == current %} class="active" {% endif %}>
+                            {{ i }}
+                        </a>
+                    </li>
+                {% endfor %}
+
+                {% for i in range(current + 3, n + 1) %}
+                    <li class="list-inline-item d-none d-md-block">
+                        <a href="#"
+                           {% if i == current %} class="active" {% endif %}>
+                            {{ i }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-2 arrow">
+            <a href="#">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro thread(title, summary) %}
+    <article class="row thread">
+        <section class="col-2 user-info">
+            <a href="perfil.html">
+                <img src="http://picsum.photos/50?random"
+                     alt="Avatar del usuario"
+                     class="rounded-circle avatar">
+            </a>
+        </section>
+        <section class="col-8 thread-content">
+            <h6 class="thread-title">
+                <a href="hilo-detail.html">
+                    {{ title }}
+                </a>
+            </h6>
+            <p class="text-muted">
+                {{ summary }}
+            </p>
+        </section>
+        <section class="col-2 thread-info">
+            <div class="comments">
+                <div class="comments-container">
+                    {{ range(50, 100) | random }}
+                </div>
+            </div>
+            <div class="views">
+                <span class="glyphicon glyphicon-eye-open"></span>
+                {{ range(100, 2000) | random }}
+            </div>
+            <div class="time">
+                <span class="glyphicon glyphicon-time"></span>
+                {{ range(10, 50) | random }} min
+            </div>
+        </section>
+    </article>
+{% endmacro %}
+
+{% macro thread_comment(content) %}
+    <article class="row thread-comment">
+        <section class="col-2 user-info">
+            <a href="perfil.html">
+                <img src="http://picsum.photos/50?random"
+                     alt="Avatar del usuario"
+                     class="rounded-circle avatar">
+            </a>
+        </section>
+        <section class="col-10 comment-content">
+            <p class="text-muted">
+                {{ content }}
+            </p>
+        </section>
+        <div class="w-100"></div>
+        <section
+            class="w-100 row no-gutters comment-info justify-content-around">
+            <div class="col-1">
+                <button class="btn btn-outline-success">
+                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                    {{ range(1, 50) | random }}
+                </button>
+            </div>
+            <div class="col-1">
+                <button class="btn btn-outline-danger">
+                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                    {{ range(1, 50) | random }}
+                </button>
+            </div>
+            <div class="col-1">
+                <button title="Reportar" class="btn btn-outline-warning">
+                    <span class="glyphicon glyphicon-flag"></span>
+                </button>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-1">
+                <button title="Responder" class="btn btn-outline-info">
+                    <span class="glyphicon glyphicon-share-alt"></span>
+                    Responder
+                </button>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2">
+                <span class="glyphicon glyphicon-time"></span>
+                {{ range(10, 50) | random }}min
+            </div>
+        </section>
+    </article>
+{% endmacro %}
