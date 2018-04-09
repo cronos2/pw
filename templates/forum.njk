@@ -92,32 +92,7 @@
     {% set current = 'forum' %}
     {% include 'includes/navbar-menu-horizontal.njk' %}
     <main class="container-fluid">
-        <div id="headernav" class="row justify-content-around">
-            <div class="col-auto">
-                <form id="search-form" action="#" method="POST"
-                      class="form-inline">
-                    <input name="search" type="search"
-                           placeholder="Buscar" aria-label="Buscar"
-                           class="form-control form-control">
-                    <button class="btn btn-outline-success ml-2">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                </form>
-            </div>
-            <div class="col-auto">
-                <button class="btn btn-lg btn-warning">Abrir nuevo hilo</button>
-            </div>
-            <div class="col-auto">
-                <a id="messages" href="#">
-                    <span class="glyphicon glyphicon-envelope"></span>
-                </a>
-                <a href="../perfil.html">
-                    <img id="avatar" src="http://picsum.photos/50?random"
-                         alt="Avatar del usuario" class="rounded-circle">
-                </a>
-                @Usuario
-            </div>
-        </div>
+        {% include 'includes/headernav.njk' %}
         <div class="container">
             {{ paginator('paginator-top') }}
         </div>
