@@ -1,5 +1,3 @@
-{% import 'includes/login-form.html' as login_form %}
-
 <header class="bg-dark container-fluid p-3 px-5">
   <div class="row">
     <a href="index.html" class="col d-block mt-2">
@@ -11,7 +9,7 @@
       <span class="d-none d-lg-inline huge">Lorem Ipsum</span>
     </h1>
     {% if needs_auth %}
-        {{ login_form.login_form() }}
+        {% include 'includes/login-form.html' %}
     {% else %}
         <div id="greeting-container" class="col">
             <span class="greeting text-muted">
