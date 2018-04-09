@@ -137,7 +137,8 @@ module.exports = {
             filename: path.join(builddir, 'registro.html'),
             inject: false,
             showErrors: true,
-            template: 'templates/register.njk'
+            template: 'templates/register.njk',
+            lorem: loremContext  // don't remove (???)
         })
     ]
 };
