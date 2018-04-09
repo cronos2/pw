@@ -139,6 +139,13 @@ module.exports = {
             showErrors: true,
             template: 'templates/register.njk',
             lorem: loremContext  // don't remove (???)
+        }),
+        new HtmlWebpackPlugin({
+            filename: path.join(builddir, 'foro.html'),
+            inject: false,
+            showErrors: true,
+            template: 'templates/forum.njk',
+            lorem: loremContext
         })
     ]
 };

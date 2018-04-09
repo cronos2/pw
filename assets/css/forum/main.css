@@ -1,0 +1,139 @@
+main {
+  background-color: #ecf0f1;
+}
+
+#headernav {
+  margin-bottom: 1rem;
+  padding: 20px 0;
+}
+
+#messages {
+  color: #666;
+  font-size: 1.5rem;
+  margin-right: 3rem;
+  vertical-align: middle;
+}
+
+#messages.unread {
+  color: #007bff;
+}
+
+#messages:hover {
+  text-decoration: none;
+}
+
+#avatar {
+  margin-right: 1rem;
+}
+
+.paginator li a {
+  background-color: #cfd5d7;
+  border-radius: 2px;
+  color: white;
+  display: block;
+  font-size: .9rem;
+  height: 24px;
+  line-height: 24px;
+  min-width: 24px;
+  padding: 0 8px;
+  text-decoration: none;
+}
+
+.paginator li a:hover, .paginator li a.active {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+}
+
+.arrow a {
+  color: #cfd5d7;
+}
+
+.arrow a:hover {
+  color: #989c9e;
+}
+
+#threads-list .thread {
+  background-color: white;
+  border-radius: 3px;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+}
+
+.thread .user-info .avatar {
+  display: block;
+  margin: auto;
+}
+
+.thread-title a {
+  color: #333;
+}
+
+.thread .comments {
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  padding-bottom: 1rem;
+}
+
+.comments-container {
+  background-color: #bdc3c7;
+  border-radius: 2px;
+  color: white;
+  display: inline-block;
+  margin: auto;
+  padding: .5rem 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.comments-container::after {
+  border-color: #bdc3c7 transparent transparent transparent;
+  border-style: solid;
+  border-width: 7px;
+  content: " ";
+  left: 50%;
+  margin-left: -7px;
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+}
+
+.thread .views, .thread .time {
+  border-bottom: 1px solid #f1f1f1;
+  color: #9da6aa;
+  font-size: .8rem;
+  padding: .5rem 1rem;
+  text-align: center;
+}
+
+.thread .time {
+  border: 0;
+}
+
+.card {
+  background: white;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin-bottom: 1.25rem;
+}
+
+#categories, #hot-threads {
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+#categories a, #hot-threads a {
+  color: #444;
+}
+
+#categories .badge {
+  float: right;
+}
+
+#hot-threads li {
+  border-top: 1px solid #f1f1f1;
+  padding: 1rem 0;
+}

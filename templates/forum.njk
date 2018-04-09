@@ -1,0 +1,157 @@
+{% extends "__layout.njk" %}
+
+{% block assets %}
+    <link rel="stylesheet" href="assets/css/forum/main.css">
+    <link rel="stylesheet" href="assets/css/glyphicons.css">
+{% endblock %}
+
+{% block title %}Foro{% endblock %}
+
+{% macro paginator(id, n=15, current=7) %}
+    <div id="{{ id }}" class="row paginator">
+        <div class="col-1 text-right arrow">
+            <a href="#">
+                <span class="glyphicon glyphicon-triangle-left"></span>
+            </a>
+        </div>
+        <div class="col-6">
+            <ul class="list-inline">
+                {% for i in range(1, n) %}
+                    <li class="list-inline-item">
+                        <a href="#"
+                           {% if i == current %} class="active" {% endif %}>
+                            {{ i }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-1 arrow">
+            <a href="#">
+                <span class="glyphicon glyphicon-triangle-right"></span>
+            </a>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro thread() %}
+    <article class="row thread">
+        <section class="col-2 user-info">
+            <a href="perfil.html">
+                <img src="http://picsum.photos/50?random" alt="Avatar del usuario"
+                     class="rounded-circle avatar">
+            </a>
+        </section>
+        <section class="col-8 thread-info">
+            <h3 class="thread-title">
+                <a href="#">
+                    {{ ctx.lorem.lorem_words(5) }}
+                </a>
+            </h3>
+            <p class="text-muted">
+                {{ ctx.lorem.lorem({ 'count': 1, 'units': 'sentences' }) }}
+            </p>
+        </section>
+        <section class="col-2 thread-info">
+            <div class="comments">
+                <div class="comments-container">
+                    {{ range(50, 100) | random }}
+                </div>
+            </div>
+            <div class="views">
+                <span class="glyphicon glyphicon-eye-open"></span>
+                {{ range(100, 2000) | random }}
+            </div>
+            <div class="time">
+                <span class="glyphicon glyphicon-time"></span>
+                {{ range(10, 50) | random }} min
+            </div>
+        </section>
+    </article>
+{% endmacro %}
+
+{% block content %}
+    {% set current = 'forum' %}
+    {% include 'includes/navbar-menu-horizontal.njk' %}
+    <main class="container-fluid">
+        <div id="headernav" class="row justify-content-around">
+            <div class="col-auto">
+                <form id="search-form" action="#" method="POST"
+                      class="form-inline">
+                    <input name="search" type="search"
+                           placeholder="Buscar" aria-label="Buscar"
+                           class="form-control form-control">
+                    <button class="btn btn-outline-success ml-2">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </form>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-lg btn-warning">Abrir nuevo hilo</button>
+            </div>
+            <div class="col-auto">
+                <a id="messages" href="#">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </a>
+                <a href="../perfil.html">
+                    <img id="avatar" src="http://picsum.photos/50?random"
+                         alt="Avatar del usuario" class="rounded-circle">
+                </a>
+                @Usuario
+            </div>
+        </div>
+        <div class="container">
+            {{ paginator('paginator-top') }}
+        </div>
+        <div class="container">
+            <div class="row">
+                <section class="col-md-8" id="threads-list">
+                    {% for _ in range(5) %}
+                        {{ thread() }}
+                    {% endfor %}
+                </section>
+                <hr class="w-100 d-md-none">
+                <aside id="menu" class="col mb-md-4">
+                    <div class="card">
+                        <h5 class="card-title">Categorías</h5>
+                        <hr class="w-100 mt-0">
+                        <ul id="categories">
+                            {% for _ in range(6) %}
+                                <li>
+                                    <a href="#">
+                                        {{
+                                        ctx.lorem.lorem_words([2, 3] | random )
+                                        }}
+                                        <span class="badge badge-pill badge-dark">
+                                            {{ range(10, 50) | random }}
+                                        </span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h5 class="card-title">Hilos recientes</h5>
+                        <ul id="hot-threads">
+                            {% for _ in range(6) %}
+                                <li>
+                                    <a href="#">
+                                        {{
+                                        ctx.lorem.lorem_words(
+                                            range(4, 7) | random
+                                        )
+                                        }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                </aside>
+            </div>
+        </div>
+        <div class="container">
+            {{ paginator('paginator-bottom') }}
+        </div>
+    </main>
+{% endblock %}
