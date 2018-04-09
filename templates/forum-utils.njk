@@ -1,11 +1,11 @@
 {% macro paginator(id, n=9, current=4) %}
-    <div id="{{ id }}" class="row paginator">
-        <div class="col-2 text-right arrow">
+    <div id="{{ id }}" class="paginator row no-gutters">
+        <div class="col-1 arrow">
             <a href="#">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
         </div>
-        <div class="col-8 col-lg-6">
+        <div class="col-10">
             <ul class="list-inline">
                 {% for i in range(1, current - 2) %}
                     <li class="list-inline-item d-none d-md-block">
@@ -35,7 +35,7 @@
                 {% endfor %}
             </ul>
         </div>
-        <div class="col-2 arrow">
+        <div class="col-1 arrow">
             <a href="#">
                 <span class="glyphicon glyphicon-chevron-right"></span>
             </a>

@@ -18,7 +18,11 @@
     <main class="container-fluid">
         {% include 'includes/headernav.njk' %}
         <div class="container">
-            {{ paginator('paginator-top') }}
+            <div class="row no-gutters">
+                <div class="col col-lg-8">
+                    {{ paginator('paginator-top') }}
+                </div>
+            </div>
         </div>
         <div class="container">
             <div class="row">
@@ -35,13 +39,13 @@
                 {% include 'includes/forum-aside.njk' %}
             </div>
         </div>
-        </div>
-        <div class="container">
-            {{ paginator('paginator-bottom') }}
-        </div>
         <div class="container">
             {% include 'includes/thread-editor.njk' %}
+            <div class="row no-gutters">
+                <div class="col col-lg-8">
+                    {{ paginator('paginator-bottom') }}
+                </div>
+            </div>
         </div>
-        <br> <!-- ugly hack to fix background / margin issues -->
     </main>
 {% endblock %}

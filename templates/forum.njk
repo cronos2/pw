@@ -15,13 +15,18 @@
     <main class="container-fluid">
         {% include 'includes/headernav.njk' %}
         <div class="container">
-            {{ paginator('paginator-top') }}
+            <div class="row no-gutters">
+                <div class="col col-lg-8">
+                    {{ paginator('paginator-top') }}
+                </div>
+            </div>
         </div>
         <div class="container">
             <div class="row">
                 <section class="col col-lg-8" id="threads-list">
                     {% for _ in range(5) %}
                         {{ thread(
+                            author=ctx.lorem.lorem_words(1),
                             title=ctx.lorem.lorem_words(5),
                             summary=ctx.lorem.lorem({
                                 'count': 1, 'units': 'sentences'
@@ -36,7 +41,11 @@
         </div>
         </div>
         <div class="container">
-            {{ paginator('paginator-bottom') }}
+            <div class="row no-gutters">
+                <div class="col col-lg-8">
+                    {{ paginator('paginator-bottom') }}
+                </div>
+            </div>
         </div>
         <br> <!-- ugly hack to fix background / margin issues -->
     </main>
