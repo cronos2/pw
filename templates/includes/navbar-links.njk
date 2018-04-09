@@ -7,28 +7,15 @@
     </a>
 {% endmacro %}
 
+{% set current = current or '' %}
+
 {{ navbar_link('index.html', 'Inicio', current == 'index' ) }}
+{{ navbar_link('actividades.html', 'Actividades', current == 'activities') }}
+{{ navbar_link('horario.html', 'Horario', current == 'timetable') }}
+{{ navbar_link('tecnicos.html', 'Técnicos', current == 'coaches') }}
+{{ navbar_link('localizacion.html', 'Localización', current == 'location') }}
 {{ navbar_link(
-    'actividades.html', 'Actividades', current == 'activities'
+    'promociones.html', 'Precios y promociones', current == 'promotions'
 ) }}
-{{ navbar_link(
-    'horario.html', 'Horario', current == 'timetable'
-) }}
-{{ navbar_link(
-    'tecnicos.html', 'Técnicos', current == 'coaches'
-) }}
-{{ navbar_link(
-    'localizacion.html', 'Localización', current == 'location'
-) }}
-{{ navbar_link(
-    'promociones.html', 'Precios y promociones',
-    current == 'promotions'
-) }}
-{{ navbar_link(
-    'registro.html', 'Alta de usuarios',
-    current == 'register'
-) }}
-{{ navbar_link(
-    'foro.html', 'Foro',
-    current == 'forum'
-) }}
+{{ navbar_link('registro.html', 'Alta de usuarios', current == 'register') }}
+{{ navbar_link('foro.html', 'Foro', current == 'forum') }}

@@ -7,46 +7,48 @@
 {% block title %}{{ ctx.lorem.lorem_words(2) }}{% endblock %}
 
 {% macro activity_link(new=false, active=false) %}
-<li class="nav-item">
-  <a class="nav-item nav-link {{ 'active' if active }}" href="#">
-    {{ ctx.lorem.lorem_words(2) }}
-  </a>
-  {% if new %}
-      <div class="w-100 d-lg-none"></div>
-      <span class="badge badge-pill badge-warning ml-lg-3 mb-3 mb-lg-0">
-      ¡NOVEDAD!
-    </span>
-    {% endif %}
-</li>
+    <li class="nav-item">
+        <a class="nav-item nav-link {{ 'active' if active }}" href="#">
+            {{ ctx.lorem.lorem_words(2) }}
+        </a>
+        {% if new %}
+            <div class="w-100 d-lg-none"></div>
+            <span class="badge badge-pill badge-warning ml-lg-3 mb-3 mb-lg-0">
+                ¡NOVEDAD!
+            </span>
+        {% endif %}
+    </li>
 {% endmacro %}
 
 {% block content %}
-<main class="container-fluid my-5 px-5">
-  <div class="row">
-    <section class="col-md-8" id="activity-container">
-      <h1 class="activity-title">{{ ctx.lorem.lorem_words(2) }}</h1>
-      <img src="http://picsum.photos/800/400?random"
-           alt="Imagen de la actividad"
-           class="my-5 mw-100">
-      {% for _ in range(3) %}
-      <p>
-        {{ ctx.lorem.lorem({ units: 'paragraphs', count: 1 }) }}
-      </p>
-      {% endfor %}
-    </section>
-    <hr class="w-100 d-md-none">
-    <aside id="activity-menu" class="col mb-md-4">
-      <h1 class="mb-3">Otras actividades</h1>
-      <nav class="nav nav-pills flex-column">
-        <ul>
-        {{ activity_link(new=true) }}
-        {{ activity_link(new=true, active=true) }}
-        {{ activity_link() }}
-        {{ activity_link() }}
-        {{ activity_link() }}
-        </ul>
-      </nav>
-    </aside>
-  </div>
-</main>
+    {% set current = '' %}
+    {% include 'includes/navbar-menu-horizontal.njk' %}
+    <main class="container-fluid my-5 px-5">
+        <div class="row">
+            <section class="col-md-8" id="activity-container">
+                <h1 class="activity-title">{{ ctx.lorem.lorem_words(2) }}</h1>
+                <img src="http://picsum.photos/800/400?random"
+                     alt="Imagen de la actividad"
+                     class="my-5 mw-100">
+                {% for _ in range(3) %}
+                    <p>
+                        {{ ctx.lorem.lorem({ units: 'paragraphs', count: 1 }) }}
+                    </p>
+                {% endfor %}
+            </section>
+            <hr class="w-100 d-md-none">
+            <aside id="activity-menu" class="col mb-md-4">
+                <h1 class="mb-3">Otras actividades</h1>
+                <nav class="nav nav-pills flex-column">
+                    <ul>
+                        {{ activity_link(new=true) }}
+                        {{ activity_link(new=true, active=true) }}
+                        {{ activity_link() }}
+                        {{ activity_link() }}
+                        {{ activity_link() }}
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+    </main>
 {% endblock %}
