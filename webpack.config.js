@@ -146,6 +146,13 @@ module.exports = {
             showErrors: true,
             template: 'templates/forum.njk',
             lorem: loremContext
+        }),
+        new HtmlWebpackPlugin({
+            filename: path.join(builddir, 'nuevo-hilo.html'),
+            inject: false,
+            showErrors: true,
+            template: 'templates/new-thread.njk',
+            lorem: loremContext
         })
     ]
 };

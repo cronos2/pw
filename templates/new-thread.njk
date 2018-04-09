@@ -1,0 +1,31 @@
+{% extends "__layout.njk" %}
+
+{% block assets %}
+    <link rel="stylesheet" href="assets/css/forum/main.css">
+    <link rel="stylesheet" href="assets/css/forum/new-thread.css">
+    <link rel="stylesheet" href="assets/css/glyphicons.css">
+{% endblock %}
+
+{% block title %}Nuevo hilo{% endblock %}
+
+{% from 'forum-utils.njk' import paginator, thread %}
+
+{% block content %}
+    {% set current = 'forum' %}
+    {% include 'includes/navbar-menu-horizontal.njk' %}
+    <main class="container-fluid">
+        {% include 'includes/headernav.njk' %}
+        <div class="container">
+            <div class="row">
+                <section class="col col-lg-8" id="threads-list">
+                    {% include 'includes/thread-editor.njk'  %}
+                    {% for _ in range(5) %}
+
+                    {% endfor %}
+                </section>
+                <hr class="w-100 d-lg-none">
+                {% include 'includes/forum-aside.njk' %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

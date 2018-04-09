@@ -1,0 +1,73 @@
+<section id="thread-editor" class="row thread">
+    <section class="col-2 user-info">
+        <a href="perfil.html">
+            <img src="http://picsum.photos/50?random"
+                 alt="Avatar del usuario"
+                 class="rounded-circle avatar">
+        </a>
+    </section>
+    <section class="col-10 thread-content">
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="title-input" class="sr-only">
+                    Título del hilo
+                </label>
+                <input id="title-input" type="text"
+                       name="title" placeholder="Título del hilo"
+                       aria-label="Título del hilo" class="form-control">
+            </div>
+            <div class="form-row mb-4">
+                <div class="col col-lg-6">
+                    <label for="category-input" class="form-label">
+                        Categoría
+                    </label>
+                    <select id="category-input"
+                            name="category"
+                            class="form-control">
+                        {% for i in range(4) %}
+                            <option value="{{ i }}">
+                                {{ ctx.lorem.lorem_words([2, 3] | random) }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="w-100 d-lg-none"></div>
+                <div class="col col-lg-6">
+                    <label for="subcategory-input" class="form-label">
+                        Subcategoría
+                    </label>
+                    <select id="subcategory-input"
+                            name="subcategory"
+                            class="form-control">
+                        {% for i in range(7) %}
+                            <option value="{{ i }}">
+                                {{ ctx.lorem.lorem_words([2, 3] | random) }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="sr-only">Descripción</label>
+                <textarea name="description" placeholder="Descripción"
+                          class="form-control"></textarea>
+            </div>
+            <div class="form-row">
+                <div class="col col-8-md form-check py-3">
+                    <input id="email-notifications-input"
+                           name="email-notifications" type="checkbox"
+                           class="form-check-input">
+                    <label for="email-notifications-input"
+                           class="form-check-label">
+                        Quiero recibir por correo las novedades en este hilo
+                    </label>
+                </div>
+                <div class="w-100 d-md-none"></div>
+                <div class="col col-md-4 text-right my-3 my-md-0">
+                    <input type="submit" value="Enviar"
+                           class="btn btn-lg btn-info">
+                </div>
+            </div>
+        </form>
+    </section>
+</section>
