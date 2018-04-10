@@ -11,8 +11,8 @@
     {% set current = 'register' %}
     {% include 'includes/navbar-menu-horizontal.njk' %}
     <main class="container-fluid my-5 px-5">
-        <div class="row">
-            <form id="register-form" class="col"
+        <div class="row justify-content-center">
+            <form id="register-form" class="col col-lg-auto"
                   action="registro.html" method="POST"
             >
                 <div class="form-row">
@@ -42,8 +42,9 @@
                            name="email" class="form-control form-control-lg"
                            required>
                 </div>
-                <div class="form-group d-flex">
+                <div class="form-group d-md-flex">
                     <label class="mb-0">Sexo</label>
+                    <br class="d-md-none">
                     <div class="form-check form-check-inline">
                         <input id="male-input" type="radio"
                                name="gender" class="form-check-input"
