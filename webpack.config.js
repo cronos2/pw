@@ -5,11 +5,11 @@ const loremIpsum = require('lorem-ipsum');
 
 const timetable = require('./timetable.json');
 
+const capitalize_word = word => word.charAt(0).toUpperCase() + word.substr(1);
+const capitalize = words => words.replace(/\w\S*/g, capitalize_word);
 const loremContext = {
     lorem: loremIpsum,
-    lorem_words: function(n){
-        return loremIpsum({ count: n, units: 'words' });
-    }
+    lorem_words: n => capitalize(loremIpsum({ count: n, units: 'words' }))
 };
 
 const builddir = path.join(__dirname, 'dist');
