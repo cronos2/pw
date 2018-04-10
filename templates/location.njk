@@ -1,7 +1,10 @@
 {% extends "__layout.njk" %}
 
 {% set api_key = "AIzaSyCAl_N-dC4lHNfIJCCuCo_STnW0XPKZJZQ" %}
-{% set place_name = "E.T.S. of Computer and Telecommunication Engineering" %}
+{% set place_name = "E.T.S. of Computer and Telecommunication Engineering" | urlencode %}
+{% set map_url_base = "https://www.google.com/maps/embed/v1/place" %}
+{% set query_string = '?key=' + api_key + '&q=' + place_name %}
+{% set map_url = map_url_base + query_string %}
 
 {% block assets %}
     <link rel="stylesheet" href="assets/css/location.css">
@@ -29,7 +32,7 @@
         <div class="col">
             <section id="map-container">
                 <iframe
-                    src="https://www.google.com/maps/embed/v1/place?key={{ api_key }}&q={{ place_name | urlencode}}"
+                    src="{{ map_url }}"
                     class="border-0 mx-auto my-5 d-block"
                     allowfullscreen
                 ></iframe>
