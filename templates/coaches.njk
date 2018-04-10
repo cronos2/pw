@@ -1,5 +1,7 @@
 {% extends "__layout.njk" %}
 
+{% from 'picsum.njk' import picsum %}
+
 {% block assets %}
 <link rel="stylesheet" href="assets/css/coaches.css">
 {% endblock %}
@@ -10,11 +12,9 @@
     <article class="coach-item col">
         <a href="tecnico-detail.html">
             <section class="coach-thumb">
-                <img
-                    src="http://picsum.photos/150?random"
-                    alt="Foto del técnicx"
-                    class="img-thumbnail"
-                >
+                {{ picsum(
+                    150, alt="Foto del técnicx", class="img-thumbnail"
+                ) }}
             </section>
             <section class="coach-name mt-4 text-center">
                 <h2>{{ ctx.lorem.lorem_words(2) }}</h2>

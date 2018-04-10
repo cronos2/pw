@@ -1,3 +1,5 @@
+{% from 'picsum.njk' import picsum %}
+
 {% macro paginator(id, n=9, current=4) %}
     <div id="{{ id }}" class="paginator row no-gutters">
         <div class="col-1 arrow">
@@ -47,9 +49,10 @@
     <article class="row thread">
         <section class="col-2 user-info">
             <a href="perfil.html">
-                <img src="http://picsum.photos/50?random"
-                     alt="Avatar del usuario"
-                     class="rounded-circle avatar">
+                {{ picsum(
+                    50, alt="Avatar del usuario",
+                    class="rounded-circle avatar"
+                ) }}
             </a>
             <p class="author">@{{ author }}</p>
         </section>
@@ -85,9 +88,10 @@
     <article class="row thread-comment">
         <section class="col-4 col-md-2 user-info">
             <a href="perfil.html">
-                <img src="http://picsum.photos/50?random"
-                     alt="Avatar del usuario"
-                     class="rounded-circle avatar">
+                {{ picsum(
+                    50, alt="Avatar del usuario",
+                    class="rounded-circle avatar"
+                ) }}
             </a>
             <p class="author">@{{ author }}</p>
         </section>

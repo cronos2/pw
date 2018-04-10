@@ -1,3 +1,5 @@
+{% from 'picsum.njk' import picsum %}
+
 <div id="headernav" class="row justify-content-around">
     <div class="col-auto d-none d-md-flex">
         <form id="search-form" action="#" method="POST"
@@ -22,8 +24,10 @@
             <span class="glyphicon glyphicon-envelope"></span>
         </a>
         <a id="profile-link" href="perfil.html">
-            <img id="avatar" src="http://picsum.photos/50?random"
-                 alt="Avatar del usuario" class="rounded-circle">
+            {{ picsum(
+                50, alt="Avatar del usuario",
+                class="rounded-circle"
+            ) }}
         </a>
         @Usuario
     </div>

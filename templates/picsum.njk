@@ -1,0 +1,8 @@
+{% macro picsum(width, height=null, alt="", id=null, class="") %}
+    {% set base_url = "http://picsum.photos/" %}
+    {% set path = width if height == null else width + '/' + height %}
+    <img
+        src="{{ base_url }}{{ path }}?random{{ range(100) | random }}"
+        alt="{{ alt }}" class="{{ class }}"
+        {% if id %}id="{{ id }}"{% endif %}>
+{% endmacro %}

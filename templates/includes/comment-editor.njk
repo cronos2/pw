@@ -1,9 +1,12 @@
+{% from 'picsum.njk' import picsum %}
+
 <section id="comment-editor" class="row">
     <section class="col-2 user-info">
         <a href="perfil.html">
-            <img src="http://picsum.photos/50?random"
-                 alt="Avatar del usuario"
-                 class="rounded-circle avatar">
+            {{ picsum(
+                    50, alt="Avatar del usuario",
+                    class="rounded-circle avatar"
+            ) }}
         </a>
     </section>
     <section class="col-10 comment-content">

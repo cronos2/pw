@@ -1,5 +1,7 @@
 {% extends "__layout.njk" %}
 
+{% from 'picsum.njk' import picsum %}
+
 {% block assets %}
 <link rel="stylesheet" href="assets/css/activities.css">
 {% endblock %}
@@ -7,23 +9,23 @@
 {% block title %}Actividades{% endblock %}
 
 {% macro activity_item(title_length, new=false) %}
-<article class="activity-item row">
-  <section class="col col-md-4 col-lg-2 activity-thumb">
-    <img src="http://picsum.photos/150?random" alt="Imagen de la actividad">
-  </section>
-  <div class="w-100 d-md-none"></div>
-  <section class="col offset-md-1 activity-summary mt-4 mt-md-0">
-    <h1>{{ ctx.lorem.lorem_words(title_length) }}</h1>
-    {% if new %}
-    <div class="w-100 d-lg-none"></div>
-    <span class="badge badge-pill badge-warning ml-lg-3 mb-3 mb-lg-0">
-      ¡NOVEDAD!
-    </span>
-    {% endif %}
-    <p>{{ ctx.lorem.lorem({ count: 1, units: 'sentences' }) }}</p>
-    <a href="actividad-detail.html">Descripción detallada</a>
-  </section>
-</article>
+    <article class="activity-item row">
+        <section class="col col-md-4 col-lg-2 activity-thumb">
+            {{ picsum(150, alt="Imagen de la actividad") }}
+        </section>
+        <div class="w-100 d-md-none"></div>
+        <section class="col offset-md-1 activity-summary mt-4 mt-md-0">
+            <h1>{{ ctx.lorem.lorem_words(title_length) }}</h1>
+            {% if new %}
+                <div class="w-100 d-lg-none"></div>
+                <span class="badge badge-pill badge-warning ml-lg-3 mb-3 mb-lg-0">
+                    ¡NOVEDAD!
+                </span>
+            {% endif %}
+            <p>{{ ctx.lorem.lorem({ count: 1, units: 'sentences' }) }}</p>
+            <a href="actividad-detail.html">Descripción detallada</a>
+        </section>
+    </article>
 {% endmacro %}
 
 {% block content %}
