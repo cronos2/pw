@@ -11,14 +11,14 @@
 {% macro coach_item() %}
     <article class="coach-item col">
         <a href="tecnico-detail.html">
-            <section class="coach-thumb">
+            <div class="coach-thumb">
                 {{ picsum(
                     150, alt="Foto del técnicx", class="img-thumbnail"
                 ) }}
-            </section>
-            <section class="coach-name mt-4 text-center">
+            </div>
+            <div class="coach-name mt-4 text-center">
                 <h2>{{ ctx.lorem.lorem_words(2) }}</h2>
-            </section>
+            </div>
         </a>
     </article>
 {% endmacro %}
@@ -40,6 +40,7 @@
     <main class="container-fluid my-5 px-5">
         <div class="row">
             <section class="col" id="coach-list">
+                <h2 class="sr-only">Lista de técnicos</h2>
                 {% for _ in range(3) %}
                     {{ coach_row() }}
                 {% endfor %}

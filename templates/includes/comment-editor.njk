@@ -1,15 +1,16 @@
 {% from 'picsum.njk' import picsum %}
 
 <section id="comment-editor" class="row">
-    <section class="col-2 user-info">
+    <h2 class="sr-only">Nuevo comentario</h2>
+    <div class="col-2 user-info">
         <a href="perfil.html">
             {{ picsum(
                     50, alt="Avatar del usuario",
                     class="rounded-circle avatar"
             ) }}
         </a>
-    </section>
-    <section class="col-10 comment-content">
+    </div>
+    <div class="col-10 comment-content">
         <form action="#" method="POST">
             <div class="form-group">
                 <label class="sr-only">Comentario</label>
@@ -33,5 +34,5 @@
                 </div>
             </div>
         </form>
-    </section>
+    </div>
 </section>

@@ -28,6 +28,7 @@
         <div class="container">
             <div class="row">
                 <section class="col col-lg-8" id="thread-comments">
+                    <h2 class="sr-only">Comentarios del hilo</h2>
                     {% for _ in range(5) %}
                         {{ thread_comment(
                             author=ctx.lorem.lorem_words(1),

@@ -66,21 +66,19 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             filename: path.join(builddir, 'login.html'),
-            meta: {'_': {
-                'http-equiv': 'refresh',
-                'content': '0; index2.html'
-            }},
+            inject: false,
             showErrors: true,
-            title: 'Iniciando sesión'
+            template: 'templates/redirect.njk',
+            title: 'Iniciando sesión',
+            url: 'index2.html'
         }),
         new HtmlWebpackPlugin({
             filename: path.join(builddir, 'logout.html'),
-            meta: {'_': {
-                'http-equiv': 'refresh',
-                'content': '0; index.html'
-            }},
+            inject: false,
             showErrors: true,
-            title: 'Desconectando'
+            template: 'templates/redirect.njk',
+            title: 'Desconectando',
+            url: 'index.html'
         }),
         new HtmlWebpackPlugin({
             filename: path.join(builddir, 'actividades.html'),

@@ -1,15 +1,16 @@
 {% from 'picsum.njk' import picsum %}
 
 <section id="thread-editor" class="row thread">
-    <section class="col-2 user-info">
+    <h2 class="sr-only">Nuevo hilo</h2>
+    <div class="col-2 user-info">
         <a href="perfil.html">
             {{ picsum(
                 50, alt="Avatar del usuario",
                 class="rounded-circle avatar"
             ) }}
         </a>
-    </section>
-    <section class="col-10 thread-content">
+    </div>
+    <div class="col-10 thread-content">
         <form action="#" method="POST">
             <div class="form-group">
                 <label for="title-input" class="sr-only">
@@ -72,5 +73,5 @@
                 </div>
             </div>
         </form>
-    </section>
+    </div>
 </section>

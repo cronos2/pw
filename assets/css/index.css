@@ -9,13 +9,10 @@ main .row {
 
 #quote {
   bottom: 5%;
+  color: white;
+  font-size: 1rem;
   position: absolute;
   right: 5%;
-}
-
-#quote p {
-  color: white;
-  margin: 0;
 }
 
 q {

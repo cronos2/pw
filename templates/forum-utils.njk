@@ -47,7 +47,7 @@
 
 {% macro thread(author, title, summary) %}
     <article class="row thread">
-        <section class="col-2 user-info">
+        <div class="col-2 user-info">
             <a href="perfil.html">
                 {{ picsum(
                     50, alt="Avatar del usuario",
@@ -55,18 +55,18 @@
                 ) }}
             </a>
             <p class="author">@{{ author }}</p>
-        </section>
-        <section class="col-8 thread-content">
-            <h6 class="thread-title">
+        </div>
+        <div class="col-8 thread-content">
+            <h2 class="thread-title h6">
                 <a href="hilo-detail.html">
                     {{ title }}
                 </a>
-            </h6>
+            </h2>
             <p class="text-muted">
                 {{ summary }}
             </p>
-        </section>
-        <section class="col-2 thread-info">
+        </div>
+        <div class="col-2 thread-info">
             <div class="comments">
                 <div class="comments-container">
                     {{ range(50, 100) | random }}
@@ -80,13 +80,14 @@
                 <span class="glyphicon glyphicon-time"></span>
                 {{ range(10, 50) | random }} min
             </div>
-        </section>
+        </div>
     </article>
 {% endmacro %}
 
 {% macro thread_comment(author, content) %}
     <article class="row thread-comment">
-        <section class="col-4 col-md-2 user-info">
+        <h3 class="sr-only">Comentario de @{{ author }}</h3>
+        <div class="col-4 col-md-2 user-info">
             <a href="perfil.html">
                 {{ picsum(
                     50, alt="Avatar del usuario",
@@ -94,14 +95,14 @@
                 ) }}
             </a>
             <p class="author">@{{ author }}</p>
-        </section>
-        <section class="col-8 col-md-10 comment-content">
+        </div>
+        <div class="col-8 col-md-10 comment-content">
             <p class="text-muted">
                 {{ content }}
             </p>
-        </section>
+        </div>
         <div class="w-100"></div>
-        <section
+        <div
             class="w-100 row no-gutters comment-info justify-content-around">
             <div class="col col-md-1">
                 <button class="btn btn-outline-success">
@@ -133,6 +134,6 @@
                 <span class="glyphicon glyphicon-time"></span>
                 {{ range(10, 50) | random }}min
             </div>
-        </section>
+        </div>
     </article>
 {% endmacro %}

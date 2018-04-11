@@ -7,26 +7,27 @@
 {% block title %}Inicio{% endblock %}
 
 {% block content %}
-<main class="container-fluid mt-md-3 px-0 px-md-3">
-  <div class="row">
-    <section class="col-md-8" id="picture">
-        <img src="http://picsum.photos/g/870/410/?image=1077"
-             alt="Imagen deportiva de ciclismo">
-      <div id="quote">
-        <p>
-          <q>
-            When you want something, all the universe
-            <br>
-            conspires in helping you to achieve it.
-          </q>
-        </p>
-        <p>&mdash; Paulo Coelho</p>
-      </div>
-    </section>
-    {% include (
-        "includes/navbar-menu.html" if needs_auth
-        else "includes/navbar-menu-auth.html"
-    ) %}
-  </div>
-</main>
+    <main class="container-fluid my-md-5 px-0 px-md-3">
+        <div class="row">
+            <section class="col-md-8" id="picture">
+                <h6 id="quote">
+                    <span>
+                        <q>
+                            When you want something, all the universe
+                            <br>
+                            conspires in helping you to achieve it.
+                        </q>
+                    </span>
+                    <br>
+                    <span>&mdash; Paulo Coelho</span>
+                </h6>
+                <img src="http://picsum.photos/g/870/410/?image=1077"
+                     alt="Imagen deportiva de ciclismo">
+            </section>
+            {% include (
+                "includes/navbar-menu.html" if needs_auth
+                else "includes/navbar-menu-auth.html"
+            ) %}
+        </div>
+    </main>
 {% endblock %}

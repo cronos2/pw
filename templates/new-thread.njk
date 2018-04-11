@@ -17,12 +17,12 @@
         {% include 'includes/headernav.njk' %}
         <div class="container">
             <div class="row">
-                <section class="col col-lg-8" id="threads-list">
+                <div class="col col-lg-8">
                     {% include 'includes/thread-editor.njk'  %}
                     {% for _ in range(5) %}
 
                     {% endfor %}
-                </section>
+                </div>
                 <hr class="w-100 d-lg-none">
                 {% include 'includes/forum-aside.njk' %}
             </div>

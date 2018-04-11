@@ -28,7 +28,7 @@
     <main class="container-fluid my-5 px-5">
         <div class="row">
             <section class="col-md-8" id="activity-container">
-                <h1 class="activity-title">{{ ctx.lorem.lorem_words(2) }}</h1>
+                <h2 class="activity-title">{{ ctx.lorem.lorem_words(2) }}</h2>
                 {{ picsum(
                     800, 400, "Imagen de la actividad",
                     class="my-5 mw-100"
@@ -41,7 +41,7 @@
             </section>
             <hr class="w-100 d-md-none">
             <aside id="activity-menu" class="col mb-md-4">
-                <h1 class="mb-3">Otras actividades</h1>
+                <h2 class="mb-3">Otras actividades</h2>
                 <nav class="nav nav-pills flex-column">
                     <ul>
                         {{ activity_link(new=true) }}
