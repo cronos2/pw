@@ -22,7 +22,7 @@
     "build": "npx webpack --progress --colors --mode production",
     "watch": "npx webpack --watch --progress --colors --mode development",
     "test": "node w3validate.js",
-    "push": "git subtree push --prefix dist origin gh-pages"
+    "push": "./deploy.sh"
   },
   "author": "Nacho Mas",
   "license": "ISC"
