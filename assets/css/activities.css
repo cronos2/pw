@@ -15,7 +15,7 @@
   margin: auto;
 }
 
-.activity-summary h1 {
+.activity-summary .activity-title {
   display: inline-block;
   text-transform: capitalize;
   vertical-align: middle;
@@ -30,7 +30,7 @@
   text-indent: 10px;
 }
 
-#news h1 {
+#news-heading {
   text-align: center;
 }
 

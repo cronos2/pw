@@ -14,7 +14,7 @@ header .row {
   font-size: 4rem;
 }
 
-footer h4 {
+footer .column-title {
   text-transform: uppercase;
 }
 

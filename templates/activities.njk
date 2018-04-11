@@ -15,7 +15,9 @@
         </div>
         <div class="w-100 d-md-none"></div>
         <div class="col offset-md-1 activity-summary mt-4 mt-md-0">
-            <h3>{{ ctx.lorem.lorem_words(title_length) }}</h3>
+            <h3 class="activity-title">
+                {{ ctx.lorem.lorem_words(title_length) }}
+            </h3>
             {% if new %}
                 <div class="w-100 d-lg-none"></div>
                 <span class="badge badge-pill badge-warning ml-lg-3 mb-3 mb-lg-0">
@@ -43,7 +45,7 @@
             </section>
             <hr class="w-100 d-md-none">
             <aside id="news" class="col mb-md-4">
-                <h2 class="mb-3">Últimas noticias</h2>
+                <h2 id="news-heading" class="mb-3">Últimas noticias</h2>
                 <a href="https://twitter.com/Twitter?ref_src=twsrc%5Etfw"
                    class="twitter-timeline"
                    data-dnt="true" data-theme="light" data-height="600">

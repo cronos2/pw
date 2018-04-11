@@ -10,15 +10,15 @@
     <div class="col col-sm-6 col-md-3">
         <ul class="pricing">
             <li>
-                <h1 class="text-{{ color_class }}">
+                <h2 class="pricing-option text-{{ color_class }}">
                     {{ ctx.lorem.lorem_words(1) }}
-                </h1>
+                </h2>
             </li>
             {% for _ in range(4) %}
                 <li>{{ ctx.lorem.lorem_words(2) }}</li>
             {% endfor %}
             <li class="price">
-                <h2 class="text-{{ color_class }}">29.99€</h2>
+                <h3 class="text-{{ color_class }}">29.99€</h3>
                 <span>al mes</span>
             </li>
             <li>
