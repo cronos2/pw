@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Desarrollo de las praćticas de PW",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cronos2/pw.git"
+  },
   "dependencies": {
     "lorem-ipsum": "^1.0.4",
     "w3cjs": "^0.4.0"
