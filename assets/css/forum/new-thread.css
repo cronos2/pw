@@ -1,0 +1,8 @@
+#thread-editor textarea {
+  height: 150px;
+  padding: .8rem 1rem;
+}
+
+#email-notifications-input + label {
+  font-size: .75rem;
+}

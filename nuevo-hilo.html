@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity=
+  "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/forum/main.css">
+  <link rel="stylesheet" href="assets/css/forum/new-thread.css">
+  <link rel="stylesheet" href="assets/css/glyphicons.css">
+  <title>Nuevo hilo</title>
+</head>
+<body>
+  <header class="bg-dark container-fluid p-3 px-5">
+    <div class="row">
+      <a href="index.html" class="col d-block mt-2"><img src=
+      "http://via.placeholder.com/150x150" alt="Logo" class=
+      "d-block mx-auto"></a>
+      <h1 id="brand-name" class="col-md-6 my-4 my-md-0 text-center">
+      <span class="d-lg-none">Lorem Ipsum</span> <span class=
+      "d-none d-lg-inline huge">Lorem Ipsum</span></h1>
+      <div id="greeting-container" class="col">
+        <span class="greeting text-muted">Bienvenido, <span class=
+        "name"><a href="profile.html" class=
+        "text-light">Usuario</a></span></span>
+        <div class="w-100"></div>
+        <br>
+        <a href="logout.html" class="btn btn-primary" role=
+        "button">Desconectar</a>
+      </div>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary nav-fill">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded=
+    "false" aria-label="Toggle navigation"><span class=
+    "navbar-toggler-icon"></span></button>
+    <div id="navbar-menu" class="collapse navbar-collapse">
+      <div class="navbar-nav w-100">
+        <a class="nav-item nav-link" href="index.html">Inicio</a> <a class=
+        "nav-item nav-link" href="actividades.html">Actividades</a> <a class=
+        "nav-item nav-link" href="horario.html">Horario</a> <a class=
+        "nav-item nav-link" href="tecnicos.html">Técnicos</a> <a class=
+        "nav-item nav-link" href="localizacion.html">Localización</a> <a class=
+        "nav-item nav-link" href="promociones.html">Precios y promociones</a>
+        <a class="nav-item nav-link" href="registro.html">Alta de usuarios</a>
+        <a class="nav-item nav-link active" href="foro.html">Foro <span class=
+        "sr-only">(current)</span></a>
+      </div>
+    </div>
+  </nav>
+  <main class="container-fluid">
+    <div id="headernav" class="row justify-content-around">
+      <div class="col-auto d-none d-md-flex">
+        <form id="search-form" action="#" method="post" class="form-inline"
+        name="search-form">
+          <input name="search" type="search" placeholder="Buscar" aria-label=
+          "Buscar" class="form-control form-control"> <button class=
+          "btn btn-outline-success ml-2"><span class=
+          "glyphicon glyphicon-search"></span></button>
+        </form>
+      </div>
+      <div class="col-auto order-3 order-md-1">
+        <a href="nuevo-hilo.html" class="btn btn-lg btn-warning">Abrir nuevo
+        hilo</a>
+      </div>
+      <div class="w-100 d-md-none my-3 order-2"></div>
+      <div class="col-auto order-1 order-md-2">
+        <a id="messages" href="#"><span class=
+        "glyphicon glyphicon-envelope"></span></a> <a id="profile-link" href=
+        "perfil.html"><img src="http://picsum.photos/50?random48" alt=
+        "Avatar del usuario" class="rounded-circle"></a> @Usuario
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col col-lg-8">
+          <section id="thread-editor" class="row thread">
+            <h2 class="sr-only">Nuevo hilo</h2>
+            <div class="col-2 user-info">
+              <a href="perfil.html"><img src="http://picsum.photos/50?random89"
+              alt="Avatar del usuario" class="rounded-circle avatar"></a>
+            </div>
+            <div class="col-10 thread-content">
+              <form action="#" method="post">
+                <div class="form-group">
+                  <label for="title-input" class="sr-only">Título del
+                  hilo</label> <input id="title-input" type="text" name="title"
+                  placeholder="Título del hilo" aria-label="Título del hilo"
+                  class="form-control">
+                </div>
+                <div class="form-row mb-4">
+                  <div class="col col-lg-6">
+                    <label for="category-input" class=
+                    "form-label">Categoría</label> <select id="category-input"
+                    name="category" class="form-control">
+                      <option value="0">
+                        Velit Fugiat
+                      </option>
+                      <option value="1">
+                        Enim Sit
+                      </option>
+                      <option value="2">
+                        Exercitation Aliqua Laboris
+                      </option>
+                      <option value="3">
+                        Tempor Velit Pariatur
+                      </option>
+                    </select>
+                  </div>
+                  <div class="w-100 d-lg-none"></div>
+                  <div class="col col-lg-6">
+                    <label for="subcategory-input" class=
+                    "form-label">Subcategoría</label> <select id=
+                    "subcategory-input" name="subcategory" class=
+                    "form-control">
+                      <option value="0">
+                        Ipsum Ut
+                      </option>
+                      <option value="1">
+                        Do Est Cupidatat
+                      </option>
+                      <option value="2">
+                        Voluptate Non Velit
+                      </option>
+                      <option value="3">
+                        Occaecat Veniam Sunt
+                      </option>
+                      <option value="4">
+                        Labore Culpa Incididunt
+                      </option>
+                      <option value="5">
+                        Minim Ut
+                      </option>
+                      <option value="6">
+                        Nisi Consequat
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="sr-only">Descripción</label> 
+                  <textarea name="description" placeholder="Descripción" class=
+                  "form-control"></textarea>
+                </div>
+                <div class="form-row">
+                  <div class="col col-8-md form-check py-3">
+                    <input id="email-notifications-input" name=
+                    "email-notifications" type="checkbox" class=
+                    "form-check-input"> <label for="email-notifications-input"
+                    class="form-check-label">Quiero recibir por correo las
+                    novedades en este hilo</label>
+                  </div>
+                  <div class="w-100 d-md-none"></div>
+                  <div class="col col-md-4 text-right my-3 my-md-0">
+                    <input type="submit" value="Enviar" class=
+                    "btn btn-lg btn-info">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+        <hr class="w-100 d-lg-none">
+        <aside id="menu" class="col mb-md-4">
+          <div class="card">
+            <h5 class="card-title">Categorías</h5>
+            <hr class="w-100 mt-0">
+            <ul id="categories">
+              <li>
+                <a href="#">Reprehenderit Cillum <span class=
+                "badge badge-pill badge-dark">10</span></a>
+              </li>
+              <li>
+                <a href="#">Ullamco Officia Mollit <span class=
+                "badge badge-pill badge-dark">33</span></a>
+              </li>
+              <li>
+                <a href="#">Esse Voluptate <span class=
+                "badge badge-pill badge-dark">46</span></a>
+              </li>
+              <li>
+                <a href="#">Cupidatat Aute Pariatur <span class=
+                "badge badge-pill badge-dark">46</span></a>
+              </li>
+              <li>
+                <a href="#">Amet Est <span class=
+                "badge badge-pill badge-dark">33</span></a>
+              </li>
+              <li>
+                <a href="#">Adipisicing Nisi <span class=
+                "badge badge-pill badge-dark">20</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h5 class="card-title">Hilos recientes</h5>
+            <ul id="hot-threads">
+              <li>
+                <a href="hilo-detail.html">Consectetur Labore Deserunt Aute</a>
+              </li>
+              <li>
+                <a href="hilo-detail.html">Ex Irure Irure Pariatur Minim
+                Amet</a>
+              </li>
+              <li>
+                <a href="hilo-detail.html">Nostrud Adipisicing Magna Elit
+                Ad</a>
+              </li>
+              <li>
+                <a href="hilo-detail.html">Tempor Deserunt Irure Dolore</a>
+              </li>
+              <li>
+                <a href="hilo-detail.html">Dolor Occaecat Ipsum In Dolore</a>
+              </li>
+              <li>
+                <a href="hilo-detail.html">In Quis Culpa Dolore Deserunt
+                Ullamco</a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <footer class="container-fluid bg-dark p-3 px-5">
+    <div class="row">
+      <article class="col">
+        <h4 class="column-title">Amet Cupidatat</h4>
+        <ul>
+          <li>
+            <a href="#">Magna Esse</a>
+          </li>
+          <li>
+            <a href="#">Consectetur Commodo</a>
+          </li>
+          <li>
+            <a href="#">Ullamco Do</a>
+          </li>
+          <li>
+            <a href="#">Nisi Tempor</a>
+          </li>
+          <li>
+            <a href="#">Do Ipsum</a>
+          </li>
+        </ul>
+      </article>
+      <div class="w-100 d-md-none"></div>
+      <article class="col">
+        <h4 class="column-title">Irure Sint</h4>
+        <ul>
+          <li>
+            <a href="#">Deserunt Non</a>
+          </li>
+          <li>
+            <a href="#">Est Commodo</a>
+          </li>
+          <li>
+            <a href="#">Aliquip Qui</a>
+          </li>
+          <li>
+            <a href="#">Eu Ipsum</a>
+          </li>
+        </ul>
+      </article>
+      <div class="w-100 d-md-none"></div>
+      <div class="w-100 d-lg-none"></div>
+      <article class="col">
+        <h4 class="column-title">Velit Tempor</h4>
+        <ul>
+          <li>
+            <a href="#">Sunt Ullamco</a>
+          </li>
+          <li>
+            <a href="#">Adipisicing Consequat</a>
+          </li>
+          <li>
+            <a href="#">Proident Duis</a>
+          </li>
+          <li>
+            <a href="#">Voluptate Aliquip</a>
+          </li>
+          <li>
+            <a href="#">Cillum Officia</a>
+          </li>
+        </ul>
+      </article>
+      <div class="w-100 d-md-none"></div>
+      <article class="col">
+        <h4 class="column-title">Enlaces de interés</h4>
+        <ul>
+          <li>
+            <a href="#">Contactar</a>
+          </li>
+          <li>
+            <a href="#">Política de cookies</a>
+          </li>
+          <li>
+            <a href="#">Términos y condiciones</a>
+          </li>
+          <li>
+            <a href="centrodeportivo/como_se_hizo.pdf">Cómo se hizo</a>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity=
+  "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script> 
+  <script src=
+  "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity=
+  "sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script> 
+  <script src=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity=
+  "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+@import url(https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900);
+
+#timetable {
+    width: 100%;
+    background-color: transparent;
+    table-layout: fixed;
+    box-sizing: border-box;
+}
+
+#timetable>thead {
+    background-color: #dddddd;
+}
+
+#timetable>thead>tr {
+    width: 100%;
+}
+
+#timetable>thead>tr>th {
+    padding: 10px;
+    font-weight: normal;
+    border: 10px solid #f0eced;
+    font-family: 'Maven Pro', sans-serif;
+    letter-spacing: -1px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #242424;
+}
+
+#timetable>thead>tr>th.hr {
+    width: 5.5%;
+}
+
+#timetable>thead>tr>th.dy {
+    text-align: center;
+    width: 13.5%;
+}
+
+#timetable>tbody {
+    background-color: #dddddd;
+}
+
+#timetable>tbody>tr {
+    width: 100%;
+}
+
+#timetable>tbody>tr>td {
+    padding: 0px;
+    font-weight: normal;
+    vertical-align: top;
+    font-family: 'Maven Pro', sans-serif;
+    letter-spacing: -1px;
+}
+
+#timetable>tbody>tr>td.hr {
+    border: 10px solid #f0eced;
+    color: #242424;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#timetable>tbody>tr>td.dy {
+    border: 10px solid #f0eced;
+}
+
+#timetable>tbody>tr>td.tt-info {
+    border: 10px solid #f0eced;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+#timetable>tbody>tr>td>div>button.edit-button {
+    opacity: 0.5;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    background: none;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    font-size: 20px;
+}
+
+#timetable>tbody>tr>td>div>button.edit-button:hover {
+    opacity: 1;
+}
+
+.element {
+  font-family: 'Maven Pro', sans-serif;
+  letter-spacing: -1px;
+  line-height: 16px;
+  padding: 10px !important;
+  opacity: 0.8;
+  position: relative;
+  outline: 0 !important;
+}
+
+.element a {
+    color: black;
+}
+
+.element.bg-danger a, .element.bg-primary a {
+  color: white;
+}
+
+.element a:hover {
+  text-decoration: none;
+}
+
+.element .element-data {
+    font-size: 13px;
+    opacity: 0.5;
+}
+
+.element .element-activity {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.element hr {
+    padding: 0px;
+    margin: 10px 0 0 0;
+    opacity: 0.1;
+    height: 1px;
+    border: none;
+}
+
+/* #tt-cats { */
+/*     padding: 20px 0 10px 0; */
+/*     float: left; */
+/*     width: 100%; */
+/*     overflow: hidden; */
+/*     position: relative; */
+/*     font-size: 12px; */
+/* } */
+
+/* #tt-cats>ul { */
+/*     clear: left; */
+/*     float: left; */
+/*     list-style: none; */
+/*     margin: 0; */
+/*     padding: 0; */
+/*     position: relative; */
+/*     left: 50%; */
+/*     text-align: center; */
+/*     border: 0px; */
+/* } */
+
+/* #tt-cats>ul>li { */
+/*     display: block; */
+/*     float: left; */
+/*     list-style: none; */
+/*     margin: 0; */
+/*     padding: 0 10px; */
+/*     position: relative; */
+/*     right: 50%; */
+/*     font-weight: 600; */
+/* } */
+
+/* #tt-cats>ul>li:before { */
+/*     font-family: FontAwesome; */
+/*     content: "\f105"; */
+/*     margin-right: 8px; */
+/*     opacity: 0.5; */
+/*     filter: alpha(opacity=50); */
+/* } */
+
+/* #tt-cats>ul>li>a:hover { */
+/*     color: #242424 !important; */
+/* } */

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity=
+  "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/forum/main.css">
+  <link rel="stylesheet" href="assets/css/forum/thread-detail.css">
+  <link rel="stylesheet" href="assets/css/glyphicons.css">
+  <title>Magna esse incididunt ullamco pariatur ad mollit excepteur id
+  amet.</title>
+</head>
+<body>
+  <header class="bg-dark container-fluid p-3 px-5">
+    <div class="row">
+      <a href="index.html" class="col d-block mt-2"><img src=
+      "http://via.placeholder.com/150x150" alt="Logo" class=
+      "d-block mx-auto"></a>
+      <h1 id="brand-name" class="col-md-6 my-4 my-md-0 text-center">
+      <span class="d-lg-none">Lorem Ipsum</span> <span class=
+      "d-none d-lg-inline huge">Lorem Ipsum</span></h1>
+      <div id="greeting-container" class="col">
+        <span class="greeting text-muted">Bienvenido, <span class=
+        "name"><a href="profile.html" class=
+        "text-light">Usuario</a></span></span>
+        <div class="w-100"></div>
+        <br>
+        <a href="logout.html" class="btn btn-primary" role=
+        "button">Desconectar</a>
+      </div>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary nav-fill">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded=
+    "false" aria-label="Toggle navigation"><span class=
+    "navbar-toggler-icon"></span></button>
+    <div id="navbar-menu" class="collapse navbar-collapse">
+      <div class="navbar-nav w-100">
+        <a class="nav-item nav-link" href="index.html">Inicio</a> <a class=
+        "nav-item nav-link" href="actividades.html">Actividades</a> <a class=
+        "nav-item nav-link" href="horario.html">Horario</a> <a class=
+        "nav-item nav-link" href="tecnicos.html">Técnicos</a> <a class=
+        "nav-item nav-link" href="localizacion.html">Localización</a> <a class=
+        "nav-item nav-link" href="promociones.html">Precios y promociones</a>
+        <a class="nav-item nav-link" href="registro.html">Alta de usuarios</a>
+        <a class="nav-item nav-link active" href="foro.html">Foro <span class=
+        "sr-only">(current)</span></a>
+      </div>
+    </div>
+  </nav>
+  <main class="container-fluid">
+    <div id="headernav" class="row justify-content-around">
+      <div class="col-auto d-none d-md-flex">
+        <form id="search-form" action="#" method="post" class="form-inline"
+        name="search-form">
+          <input name="search" type="search" placeholder="Buscar" aria-label=
+          "Buscar" class="form-control form-control"> <button class=
+          "btn btn-outline-success ml-2"><span class=
+          "glyphicon glyphicon-search"></span></button>
+        </form>
+      </div>
+      <div class="col-auto order-3 order-md-1">
+        <a href="nuevo-hilo.html" class="btn btn-lg btn-warning">Abrir nuevo
+        hilo</a>
+      </div>
+      <div class="w-100 d-md-none my-3 order-2"></div>
+      <div class="col-auto order-1 order-md-2">
+        <a id="messages" href="#"><span class=
+        "glyphicon glyphicon-envelope"></span></a> <a id="profile-link" href=
+        "perfil.html"><img src="http://picsum.photos/50?random99" alt=
+        "Avatar del usuario" class="rounded-circle"></a> @Usuario
+      </div>
+    </div>
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col col-lg-8">
+          <div id="paginator-top" class="paginator row no-gutters">
+            <div class="col-1 arrow">
+              <a href="#"><span class=
+              "glyphicon glyphicon-chevron-left"></span></a>
+            </div>
+            <div class="col-10">
+              <ul class="list-inline">
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">1</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">2</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">3</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="active">4</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">5</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">6</a>
+                </li>
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">7</a>
+                </li>
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">8</a>
+                </li>
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">9</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-1 arrow">
+              <a href="#"><span class=
+              "glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <section class="col col-lg-8" id="thread-comments">
+          <h2 class="sr-only">Comentarios del hilo</h2>
+          <article class="row thread-comment">
+            <h3 class="sr-only">Comentario de @Anim</h3>
+            <div class="col-4 col-md-2 user-info">
+              <a href="perfil.html"><img src="http://picsum.photos/50?random46"
+              alt="Avatar del usuario" class="rounded-circle avatar"></a>
+              <p class="author">@Anim</p>
+            </div>
+            <div class="col-8 col-md-10 comment-content">
+              <p class="text-muted">Occaecat est officia mollit ex et veniam
+              aute pariatur laborum cupidatat aliquip quis ut. Duis ullamco
+              proident incididunt excepteur sit mollit ut eiusmod fugiat sit
+              officia qui laborum. Voluptate tempor ipsum aliqua nisi irure
+              velit quis amet ex exercitation ea nostrud laboris elit.</p>
+            </div>
+            <div class="w-100"></div>
+            <div class=
+            "w-100 row no-gutters comment-info justify-content-around">
+              <div class="col col-md-1">
+                <button class="btn btn-outline-success"><span class=
+                "glyphicon glyphicon-thumbs-up"></span> 34</button>
+              </div>
+              <div class="col col-md-1">
+                <button class="btn btn-outline-danger"><span class=
+                "glyphicon glyphicon-thumbs-down"></span> 39</button>
+              </div>
+              <div class="col col-md-1">
+                <button title="Reportar" class=
+                "btn btn-outline-warning"><span class=
+                "glyphicon glyphicon-flag"></span></button>
+              </div>
+              <div class="w-100 d-md-none my-2 my-md-0"></div>
+              <div class="col-1"></div>
+              <div class="col col-md-1">
+                <button title="Responder" class=
+                "btn btn-outline-info"><span class=
+                "glyphicon glyphicon-share-alt"></span> Responder</button>
+              </div>
+              <div class="col-1"></div>
+              <div class="col col-md-2">
+                <span class="glyphicon glyphicon-time"></span> 11min
+              </div>
+            </div>
+          </article>
+          <article class="row thread-comment">
+            <h3 class="sr-only">Comentario de @Pariatur</h3>
+            <div class="col-4 col-md-2 user-info">
+              <a href="perfil.html"><img src="http://picsum.photos/50?random35"
+              alt="Avatar del usuario" class="rounded-circle avatar"></a>
+              <p class="author">@Pariatur</p>
+            </div>
+            <div class="col-8 col-md-10 comment-content">
+              <p class="text-muted">Amet incididunt in incididunt in est dolore
+              consequat dolore excepteur commodo incididunt in ad aliquip.
+              Deserunt ipsum occaecat exercitation ut. Eiusmod do reprehenderit
+              do exercitation dolore anim laborum laborum aute reprehenderit
+              commodo deserunt. Id laboris reprehenderit in irure aute culpa
+              amet est esse ut ad amet anim. Veniam occaecat nulla eiusmod ut
+              laboris duis. Aute cillum deserunt fugiat nostrud ea ea esse est.
+              Labore nisi adipisicing do sit laborum esse.</p>
+            </div>
+            <div class="w-100"></div>
+            <div class=
+            "w-100 row no-gutters comment-info justify-content-around">
+              <div class="col col-md-1">
+                <button class="btn btn-outline-success"><span class=
+                "glyphicon glyphicon-thumbs-up"></span> 32</button>
+              </div>
+              <div class="col col-md-1">
+                <button class="btn btn-outline-danger"><span class=
+                "glyphicon glyphicon-thumbs-down"></span> 25</button>
+              </div>
+              <div class="col col-md-1">
+                <button title="Reportar" class=
+                "btn btn-outline-warning"><span class=
+                "glyphicon glyphicon-flag"></span></button>
+              </div>
+              <div class="w-100 d-md-none my-2 my-md-0"></div>
+              <div class="col-1"></div>
+              <div class="col col-md-1">
+                <button title="Responder" class=
+                "btn btn-outline-info"><span class=
+                "glyphicon glyphicon-share-alt"></span> Responder</button>
+              </div>
+              <div class="col-1"></div>
+              <div class="col col-md-2">
+                <span class="glyphicon glyphicon-time"></span> 22min
+              </div>
+            </div>
+          </article>
+          <article class="row thread-comment">
+            <h3 class="sr-only">Comentario de @Deserunt</h3>
+            <div class="col-4 col-md-2 user-info">
+              <a href="perfil.html"><img src="http://picsum.photos/50?random14"
+              alt="Avatar del usuario" class="rounded-circle avatar"></a>
+              <p class="author">@Deserunt</p>
+            </div>
+            <div class="col-8 col-md-10 comment-content">
+              <p class="text-muted">Adipisicing cillum pariatur quis duis amet
+              exercitation ipsum ullamco. Occaecat elit deserunt quis anim
+              minim excepteur laborum quis do consectetur ea veniam. Amet
+              fugiat voluptate culpa ad ut aliqua mollit voluptate in. Sunt
+              aute labore amet deserunt dolor do in laborum sint dolore
+              adipisicing qui est nulla. Lorem sunt anim Lorem exercitation
+              adipisicing ex in fugiat cillum aliqua aute id.</p>
+            </div>
+            <div class="w-100"></div>
+            <div class=
+            "w-100 row no-gutters comment-info justify-content-around">
+              <div class="col col-md-1">
+                <button class="btn btn-outline-success"><span class=
+                "glyphicon glyphicon-thumbs-up"></span> 6</button>
+              </div>
+              <div class="col col-md-1">
+                <button class="btn btn-outline-danger"><span class=
+                "glyphicon glyphicon-thumbs-down"></span> 14</button>
+              </div>
+              <div class="col col-md-1">
+                <button title="Reportar" class=
+                "btn btn-outline-warning"><span class=
+                "glyphicon glyphicon-flag"></span></button>
+              </div>
+              <div class="w-100 d-md-none my-2 my-md-0"></div>
+              <div class="col-1"></div>
+              <div class="col col-md-1">
+                <button title="Responder" class=
+                "btn btn-outline-info"><span class=
+                "glyphicon glyphicon-share-alt"></span> Responder</button>
+              </div>
+              <div class="col-1"></div>
+              <div class="col col-md-2">
+                <span class="glyphicon glyphicon-time"></span> 20min
+              </div>
+            </div>
+          </article>
+          <article class="row thread-comment">
+            <h3 class="sr-only">Comentario de @Tempor</h3>
+            <div class="col-4 col-md-2 user-info">
+              <a href="perfil.html"><img src="http://picsum.photos/50?random1"
+              alt="Avatar del usuario" class="rounded-circle avatar"></a>
+              <p class="author">@Tempor</p>
+            </div>
+            <div class="col-8 col-md-10 comment-content">
+              <p class="text-muted">Ipsum id consequat minim laborum anim sit
+              mollit est. Officia laborum minim cillum amet irure culpa ex
+              irure pariatur ut culpa cillum. In ut et occaecat aute anim est.
+              Veniam duis est labore irure. Irure laboris ullamco fugiat nulla
+              ad irure laborum amet in nisi duis sit exercitation. Non
+              exercitation ex excepteur in consequat tempor esse nulla nulla
+              magna aute ea duis voluptate.</p>
+            </div>
+            <div class="w-100"></div>
+            <div class=
+            "w-100 row no-gutters comment-info justify-content-around">
+              <div class="col col-md-1">
+                <button class="btn btn-outline-success"><span class=
+                "glyphicon glyphicon-thumbs-up"></span> 13</button>
+              </div>
+              <div class="col col-md-1">
+                <button class="btn btn-outline-danger"><span class=
+                "glyphicon glyphicon-thumbs-down"></span> 15</button>
+              </div>
+              <div class="col col-md-1">
+                <button title="Reportar" class=
+                "btn btn-outline-warning"><span class=
+                "glyphicon glyphicon-flag"></span></button>
+              </div>
+              <div class="w-100 d-md-none my-2 my-md-0"></div>
+              <div class="col-1"></div>
+              <div class="col col-md-1">
+                <button title="Responder" class=
+                "btn btn-outline-info"><span class=
+                "glyphicon glyphicon-share-alt"></span> Responder</button>
+              </div>
+              <div class="col-1"></div>
+              <div class="col col-md-2">
+                <span class="glyphicon glyphicon-time"></span> 14min
+              </div>
+            </div>
+          </article>
+          <article class="row thread-comment">
+            <h3 class="sr-only">Comentario de @Labore</h3>
+            <div class="col-4 col-md-2 user-info">
+              <a href="perfil.html"><img src="http://picsum.photos/50?random33"
+              alt="Avatar del usuario" class="rounded-circle avatar"></a>
+              <p class="author">@Labore</p>
+            </div>
+            <div class="col-8 col-md-10 comment-content">
+              <p class="text-muted">Irure quis tempor et est dolor ullamco
+              dolor fugiat irure velit ea. Duis magna exercitation cillum et
+              elit anim excepteur adipisicing amet occaecat. Labore sunt enim
+              fugiat laborum sint quis nulla eiusmod sint elit pariatur laborum
+              elit. Occaecat duis reprehenderit ad esse ipsum. Dolor fugiat
+              nulla pariatur labore aliquip sunt. Qui voluptate ipsum est culpa
+              minim adipisicing nulla qui aliqua eiusmod.</p>
+            </div>
+            <div class="w-100"></div>
+            <div class=
+            "w-100 row no-gutters comment-info justify-content-around">
+              <div class="col col-md-1">
+                <button class="btn btn-outline-success"><span class=
+                "glyphicon glyphicon-thumbs-up"></span> 34</button>
+              </div>
+              <div class="col col-md-1">
+                <button class="btn btn-outline-danger"><span class=
+                "glyphicon glyphicon-thumbs-down"></span> 30</button>
+              </div>
+              <div class="col col-md-1">
+                <button title="Reportar" class=
+                "btn btn-outline-warning"><span class=
+                "glyphicon glyphicon-flag"></span></button>
+              </div>
+              <div class="w-100 d-md-none my-2 my-md-0"></div>
+              <div class="col-1"></div>
+              <div class="col col-md-1">
+                <button title="Responder" class=
+                "btn btn-outline-info"><span class=
+                "glyphicon glyphicon-share-alt"></span> Responder</button>
+              </div>
+              <div class="col-1"></div>
+              <div class="col col-md-2">
+                <span class="glyphicon glyphicon-time"></span> 14min
+              </div>
+            </div>
+          </article>
+          <section id="comment-editor" class="row">
+            <h2 class="sr-only">Nuevo comentario</h2>
+            <div class="col-2 user-info">
+              <a href="perfil.html"><img src="http://picsum.photos/50?random32"
+              alt="Avatar del usuario" class="rounded-circle avatar"></a>
+            </div>
+            <div class="col-10 comment-content">
+              <form action="#" method="post">
+                <div class="form-group">
+                  <label class="sr-only">Comentario</label> 
+                  <textarea name="description" placeholder="Comentario" class=
+                  "form-control"></textarea>
+                </div>
+                <div class="form-row align-items-center">
+                  <div class="col col-8-md form-check py-3">
+                    <input id="email-notifications-input" name=
+                    "email-notifications" type="checkbox" class=
+                    "form-check-input"> <label for="email-notifications-input"
+                    class="form-check-label">Quiero recibir por correo las
+                    novedades en este hilo</label>
+                  </div>
+                  <div class="w-100 d-md-none"></div>
+                  <div class="col col-md-4 text-right my-3 my-md-0">
+                    <input type="submit" value="Enviar" class=
+                    "btn btn-lg btn-info">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </section>
+        </section>
+        <hr class="w-100 d-lg-none">
+        <aside id="menu" class="col mb-md-4">
+          <div class="card">
+            <h5 class="card-title">Categorías</h5>
+            <hr class="w-100 mt-0">
+            <ul id="categories">
+              <li>
+                <a href="#">Duis Qui <span class=
+                "badge badge-pill badge-dark">14</span></a>
+              </li>
+              <li>
+                <a href="#">Veniam Non <span class=
+                "badge badge-pill badge-dark">19</span></a>
+              </li>
+              <li>
+                <a href="#">Dolore Aliquip Ut <span class=
+                "badge badge-pill badge-dark">33</span></a>
+              </li>
+              <li>
+                <a href="#">Qui Esse <span class=
+                "badge badge-pill badge-dark">33</span></a>
+              </li>
+              <li>
+                <a href="#">Magna Enim <span class=
+                "badge badge-pill badge-dark">43</span></a>
+              </li>
+              <li>
+                <a href="#">Nisi Excepteur <span class=
+                "badge badge-pill badge-dark">28</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h5 class="card-title">Hilos recientes</h5>
+            <ul id="hot-threads">
+              <li>
+                <a href="hilo-detail.html">Dolor Commodo Fugiat Dolore
+                Tempor</a>
+              </li>
+              <li>
+                <a href="hilo-detail.html">Amet Ipsum Incididunt Cupidatat Non
+                Fugiat</a>
+              </li>
+              <li>
+                <a href="hilo-detail.html">Sit Dolor Esse Exercitation Deserunt
+                Proident</a>
+              </li>
+              <li>
+                <a href="hilo-detail.html">Magna Eu Dolore Exercitation Fugiat
+                Velit</a>
+              </li>
+              <li>
+                <a href="hilo-detail.html">Quis Incididunt Nostrud Incididunt
+                Proident</a>
+              </li>
+              <li>
+                <a href="hilo-detail.html">Non Nulla Sint Incididunt Ex
+                Reprehenderit</a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col col-lg-8">
+          <div id="paginator-bottom" class="paginator row no-gutters">
+            <div class="col-1 arrow">
+              <a href="#"><span class=
+              "glyphicon glyphicon-chevron-left"></span></a>
+            </div>
+            <div class="col-10">
+              <ul class="list-inline">
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">1</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">2</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">3</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="active">4</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">5</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">6</a>
+                </li>
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">7</a>
+                </li>
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">8</a>
+                </li>
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">9</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-1 arrow">
+              <a href="#"><span class=
+              "glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="container-fluid bg-dark p-3 px-5">
+    <div class="row">
+      <article class="col">
+        <h4 class="column-title">Non Eiusmod</h4>
+        <ul>
+          <li>
+            <a href="#">Duis Sint</a>
+          </li>
+          <li>
+            <a href="#">Proident Non</a>
+          </li>
+          <li>
+            <a href="#">Laboris Exercitation</a>
+          </li>
+          <li>
+            <a href="#">Non Velit</a>
+          </li>
+          <li>
+            <a href="#">Consequat Incididunt</a>
+          </li>
+        </ul>
+      </article>
+      <div class="w-100 d-md-none"></div>
+      <article class="col">
+        <h4 class="column-title">Aute Ut</h4>
+        <ul>
+          <li>
+            <a href="#">Exercitation Nisi</a>
+          </li>
+          <li>
+            <a href="#">Pariatur Pariatur</a>
+          </li>
+          <li>
+            <a href="#">Do Consectetur</a>
+          </li>
+          <li>
+            <a href="#">Sint Ea</a>
+          </li>
+        </ul>
+      </article>
+      <div class="w-100 d-md-none"></div>
+      <div class="w-100 d-lg-none"></div>
+      <article class="col">
+        <h4 class="column-title">Id Incididunt</h4>
+        <ul>
+          <li>
+            <a href="#">Commodo Dolore</a>
+          </li>
+          <li>
+            <a href="#">Pariatur Fugiat</a>
+          </li>
+          <li>
+            <a href="#">Voluptate Culpa</a>
+          </li>
+          <li>
+            <a href="#">Cupidatat Nisi</a>
+          </li>
+          <li>
+            <a href="#">Deserunt Ex</a>
+          </li>
+        </ul>
+      </article>
+      <div class="w-100 d-md-none"></div>
+      <article class="col">
+        <h4 class="column-title">Enlaces de interés</h4>
+        <ul>
+          <li>
+            <a href="#">Contactar</a>
+          </li>
+          <li>
+            <a href="#">Política de cookies</a>
+          </li>
+          <li>
+            <a href="#">Términos y condiciones</a>
+          </li>
+          <li>
+            <a href="centrodeportivo/como_se_hizo.pdf">Cómo se hizo</a>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity=
+  "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script> 
+  <script src=
+  "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity=
+  "sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script> 
+  <script src=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity=
+  "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.coach-item {
+  margin: 10% auto;
+}
+
+.coach-thumb img {
+  display: block;
+  margin: auto;
+}
+
+.coach-name {
+  text-align: center;
+  text-transform: capitalize;
+}

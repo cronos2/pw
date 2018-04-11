@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity=
+  "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/forum/main.css">
+  <link rel="stylesheet" href="assets/css/glyphicons.css">
+  <title>Foro</title>
+</head>
+<body>
+  <header class="bg-dark container-fluid p-3 px-5">
+    <div class="row">
+      <a href="index.html" class="col d-block mt-2"><img src=
+      "http://via.placeholder.com/150x150" alt="Logo" class=
+      "d-block mx-auto"></a>
+      <h1 id="brand-name" class="col-md-6 my-4 my-md-0 text-center">
+      <span class="d-lg-none">Lorem Ipsum</span> <span class=
+      "d-none d-lg-inline huge">Lorem Ipsum</span></h1>
+      <div id="greeting-container" class="col">
+        <span class="greeting text-muted">Bienvenido, <span class=
+        "name"><a href="profile.html" class=
+        "text-light">Usuario</a></span></span>
+        <div class="w-100"></div>
+        <br>
+        <a href="logout.html" class="btn btn-primary" role=
+        "button">Desconectar</a>
+      </div>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary nav-fill">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded=
+    "false" aria-label="Toggle navigation"><span class=
+    "navbar-toggler-icon"></span></button>
+    <div id="navbar-menu" class="collapse navbar-collapse">
+      <div class="navbar-nav w-100">
+        <a class="nav-item nav-link" href="index.html">Inicio</a> <a class=
+        "nav-item nav-link" href="actividades.html">Actividades</a> <a class=
+        "nav-item nav-link" href="horario.html">Horario</a> <a class=
+        "nav-item nav-link" href="tecnicos.html">Técnicos</a> <a class=
+        "nav-item nav-link" href="localizacion.html">Localización</a> <a class=
+        "nav-item nav-link" href="promociones.html">Precios y promociones</a>
+        <a class="nav-item nav-link" href="registro.html">Alta de usuarios</a>
+        <a class="nav-item nav-link active" href="foro.html">Foro <span class=
+        "sr-only">(current)</span></a>
+      </div>
+    </div>
+  </nav>
+  <main class="container-fluid">
+    <div id="headernav" class="row justify-content-around">
+      <div class="col-auto d-none d-md-flex">
+        <form id="search-form" action="#" method="post" class="form-inline"
+        name="search-form">
+          <input name="search" type="search" placeholder="Buscar" aria-label=
+          "Buscar" class="form-control form-control"> <button class=
+          "btn btn-outline-success ml-2"><span class=
+          "glyphicon glyphicon-search"></span></button>
+        </form>
+      </div>
+      <div class="col-auto order-3 order-md-1">
+        <a href="nuevo-hilo.html" class="btn btn-lg btn-warning">Abrir nuevo
+        hilo</a>
+      </div>
+      <div class="w-100 d-md-none my-3 order-2"></div>
+      <div class="col-auto order-1 order-md-2">
+        <a id="messages" href="#"><span class=
+        "glyphicon glyphicon-envelope"></span></a> <a id="profile-link" href=
+        "perfil.html"><img src="http://picsum.photos/50?random70" alt=
+        "Avatar del usuario" class="rounded-circle"></a> @Usuario
+      </div>
+    </div>
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col col-lg-8">
+          <div id="paginator-top" class="paginator row no-gutters">
+            <div class="col-1 arrow">
+              <a href="#"><span class=
+              "glyphicon glyphicon-chevron-left"></span></a>
+            </div>
+            <div class="col-10">
+              <ul class="list-inline">
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">1</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">2</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">3</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="active">4</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">5</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">6</a>
+                </li>
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">7</a>
+                </li>
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">8</a>
+                </li>
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">9</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-1 arrow">
+              <a href="#"><span class=
+              "glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <section class="col col-lg-8" id="threads-list">
+          <h2 class="sr-only">Hilos recientes</h2>
+          <article class="row thread">
+            <div class="col-2 user-info">
+              <a href="perfil.html"><img src="http://picsum.photos/50?random32"
+              alt="Avatar del usuario" class="rounded-circle avatar"></a>
+              <p class="author">@Ullamco</p>
+            </div>
+            <div class="col-8 thread-content">
+              <h2 class="thread-title h6"><a href="hilo-detail.html">Cillum
+              Aute Proident Culpa In</a></h2>
+              <p class="text-muted">Velit voluptate reprehenderit nulla
+              deserunt laborum mollit duis quis.</p>
+            </div>
+            <div class="col-2 thread-info">
+              <div class="comments">
+                <div class="comments-container">
+                  64
+                </div>
+              </div>
+              <div class="views">
+                <span class="glyphicon glyphicon-eye-open"></span> 1114
+              </div>
+              <div class="time">
+                <span class="glyphicon glyphicon-time"></span> 10 min
+              </div>
+            </div>
+          </article>
+          <article class="row thread">
+            <div class="col-2 user-info">
+              <a href="perfil.html"><img src="http://picsum.photos/50?random20"
+              alt="Avatar del usuario" class="rounded-circle avatar"></a>
+              <p class="author">@Anim</p>
+            </div>
+            <div class="col-8 thread-content">
+              <h2 class="thread-title h6"><a href="hilo-detail.html">Velit
+              Magna Nisi Velit Aute</a></h2>
+              <p class="text-muted">Pariatur tempor ea nostrud dolor quis
+              consequat dolore proident sint adipisicing dolore.</p>
+            </div>
+            <div class="col-2 thread-info">
+              <div class="comments">
+                <div class="comments-container">
+                  54
+                </div>
+              </div>
+              <div class="views">
+                <span class="glyphicon glyphicon-eye-open"></span> 784
+              </div>
+              <div class="time">
+                <span class="glyphicon glyphicon-time"></span> 29 min
+              </div>
+            </div>
+          </article>
+          <article class="row thread">
+            <div class="col-2 user-info">
+              <a href="perfil.html"><img src="http://picsum.photos/50?random7"
+              alt="Avatar del usuario" class="rounded-circle avatar"></a>
+              <p class="author">@Ullamco</p>
+            </div>
+            <div class="col-8 thread-content">
+              <h2 class="thread-title h6"><a href="hilo-detail.html">Consequat
+              Laboris Sit Magna Cupidatat</a></h2>
+              <p class="text-muted">Labore irure do enim culpa reprehenderit ex
+              ipsum cupidatat Lorem incididunt.</p>
+            </div>
+            <div class="col-2 thread-info">
+              <div class="comments">
+                <div class="comments-container">
+                  95
+                </div>
+              </div>
+              <div class="views">
+                <span class="glyphicon glyphicon-eye-open"></span> 1776
+              </div>
+              <div class="time">
+                <span class="glyphicon glyphicon-time"></span> 28 min
+              </div>
+            </div>
+          </article>
+          <article class="row thread">
+            <div class="col-2 user-info">
+              <a href="perfil.html"><img src="http://picsum.photos/50?random29"
+              alt="Avatar del usuario" class="rounded-circle avatar"></a>
+              <p class="author">@Incididunt</p>
+            </div>
+            <div class="col-8 thread-content">
+              <h2 class="thread-title h6"><a href="hilo-detail.html">Sit Ut Non
+              Proident Occaecat</a></h2>
+              <p class="text-muted">Est ipsum duis magna incididunt
+              occaecat.</p>
+            </div>
+            <div class="col-2 thread-info">
+              <div class="comments">
+                <div class="comments-container">
+                  53
+                </div>
+              </div>
+              <div class="views">
+                <span class="glyphicon glyphicon-eye-open"></span> 1141
+              </div>
+              <div class="time">
+                <span class="glyphicon glyphicon-time"></span> 49 min
+              </div>
+            </div>
+          </article>
+          <article class="row thread">
+            <div class="col-2 user-info">
+              <a href="perfil.html"><img src="http://picsum.photos/50?random6"
+              alt="Avatar del usuario" class="rounded-circle avatar"></a>
+              <p class="author">@Commodo</p>
+            </div>
+            <div class="col-8 thread-content">
+              <h2 class="thread-title h6"><a href=
+              "hilo-detail.html">Exercitation Nulla Non Sint Magna</a></h2>
+              <p class="text-muted">Dolore ipsum culpa laborum sint.</p>
+            </div>
+            <div class="col-2 thread-info">
+              <div class="comments">
+                <div class="comments-container">
+                  51
+                </div>
+              </div>
+              <div class="views">
+                <span class="glyphicon glyphicon-eye-open"></span> 131
+              </div>
+              <div class="time">
+                <span class="glyphicon glyphicon-time"></span> 34 min
+              </div>
+            </div>
+          </article>
+        </section>
+        <hr class="w-100 d-lg-none">
+        <aside id="menu" class="col mb-md-4">
+          <div class="card">
+            <h5 class="card-title">Categorías</h5>
+            <hr class="w-100 mt-0">
+            <ul id="categories">
+              <li>
+                <a href="#">Fugiat Ea <span class=
+                "badge badge-pill badge-dark">27</span></a>
+              </li>
+              <li>
+                <a href="#">Veniam Nisi <span class=
+                "badge badge-pill badge-dark">23</span></a>
+              </li>
+              <li>
+                <a href="#">Veniam Cupidatat Ut <span class=
+                "badge badge-pill badge-dark">17</span></a>
+              </li>
+              <li>
+                <a href="#">Cillum Magna <span class=
+                "badge badge-pill badge-dark">29</span></a>
+              </li>
+              <li>
+                <a href="#">Non Commodo Nisi <span class=
+                "badge badge-pill badge-dark">12</span></a>
+              </li>
+              <li>
+                <a href="#">Velit Veniam Aliqua <span class=
+                "badge badge-pill badge-dark">16</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h5 class="card-title">Hilos recientes</h5>
+            <ul id="hot-threads">
+              <li>
+                <a href="hilo-detail.html">Sunt Cillum Proident Cupidatat
+                Voluptate Eu</a>
+              </li>
+              <li>
+                <a href="hilo-detail.html">Est Ad Sint Veniam Aliquip Amet</a>
+              </li>
+              <li>
+                <a href="hilo-detail.html">Ut Nisi Ullamco Velit</a>
+              </li>
+              <li>
+                <a href="hilo-detail.html">Culpa Dolor Nostrud In</a>
+              </li>
+              <li>
+                <a href="hilo-detail.html">Sit Nostrud Magna Elit Esse Et</a>
+              </li>
+              <li>
+                <a href="hilo-detail.html">Nostrud Laboris Ut Eu</a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col col-lg-8">
+          <div id="paginator-bottom" class="paginator row no-gutters">
+            <div class="col-1 arrow">
+              <a href="#"><span class=
+              "glyphicon glyphicon-chevron-left"></span></a>
+            </div>
+            <div class="col-10">
+              <ul class="list-inline">
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">1</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">2</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">3</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="active">4</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">5</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">6</a>
+                </li>
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">7</a>
+                </li>
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">8</a>
+                </li>
+                <li class="list-inline-item d-none d-md-block">
+                  <a href="#">9</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-1 arrow">
+              <a href="#"><span class=
+              "glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- ugly hack to fix background / margin issues -->
+  </main>
+  <footer class="container-fluid bg-dark p-3 px-5">
+    <div class="row">
+      <article class="col">
+        <h4 class="column-title">Magna Aliqua</h4>
+        <ul>
+          <li>
+            <a href="#">Aute Dolor</a>
+          </li>
+          <li>
+            <a href="#">Amet Voluptate</a>
+          </li>
+          <li>
+            <a href="#">Non Qui</a>
+          </li>
+          <li>
+            <a href="#">Occaecat Qui</a>
+          </li>
+          <li>
+            <a href="#">Lorem Id</a>
+          </li>
+        </ul>
+      </article>
+      <div class="w-100 d-md-none"></div>
+      <article class="col">
+        <h4 class="column-title">Elit Nulla</h4>
+        <ul>
+          <li>
+            <a href="#">Culpa Nulla</a>
+          </li>
+          <li>
+            <a href="#">Cupidatat Sint</a>
+          </li>
+          <li>
+            <a href="#">Culpa Esse</a>
+          </li>
+          <li>
+            <a href="#">Reprehenderit Esse</a>
+          </li>
+        </ul>
+      </article>
+      <div class="w-100 d-md-none"></div>
+      <div class="w-100 d-lg-none"></div>
+      <article class="col">
+        <h4 class="column-title">Lorem Velit</h4>
+        <ul>
+          <li>
+            <a href="#">Exercitation Sit</a>
+          </li>
+          <li>
+            <a href="#">Aliqua Nulla</a>
+          </li>
+          <li>
+            <a href="#">Ullamco Mollit</a>
+          </li>
+          <li>
+            <a href="#">Fugiat Sit</a>
+          </li>
+          <li>
+            <a href="#">Officia Mollit</a>
+          </li>
+        </ul>
+      </article>
+      <div class="w-100 d-md-none"></div>
+      <article class="col">
+        <h4 class="column-title">Enlaces de interés</h4>
+        <ul>
+          <li>
+            <a href="#">Contactar</a>
+          </li>
+          <li>
+            <a href="#">Política de cookies</a>
+          </li>
+          <li>
+            <a href="#">Términos y condiciones</a>
+          </li>
+          <li>
+            <a href="centrodeportivo/como_se_hizo.pdf">Cómo se hizo</a>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity=
+  "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script> 
+  <script src=
+  "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity=
+  "sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script> 
+  <script src=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity=
+  "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"></script>
+</body>
+</html>

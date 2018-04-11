@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity=
+  "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/glyphicons.css">
+  <link rel="stylesheet" href="assets/css/register.css">
+  <title>Alta de usuario</title>
+</head>
+<body>
+  <header class="bg-dark container-fluid p-3 px-5">
+    <div class="row">
+      <a href="index.html" class="col d-block mt-2"><img src=
+      "http://via.placeholder.com/150x150" alt="Logo" class=
+      "d-block mx-auto"></a>
+      <h1 id="brand-name" class="col-md-6 my-4 my-md-0 text-center">
+      <span class="d-lg-none">Lorem Ipsum</span> <span class=
+      "d-none d-lg-inline huge">Lorem Ipsum</span></h1>
+      <div id="greeting-container" class="col">
+        <span class="greeting text-muted">Bienvenido, <span class=
+        "name"><a href="profile.html" class=
+        "text-light">Usuario</a></span></span>
+        <div class="w-100"></div>
+        <br>
+        <a href="logout.html" class="btn btn-primary" role=
+        "button">Desconectar</a>
+      </div>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary nav-fill">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded=
+    "false" aria-label="Toggle navigation"><span class=
+    "navbar-toggler-icon"></span></button>
+    <div id="navbar-menu" class="collapse navbar-collapse">
+      <div class="navbar-nav w-100">
+        <a class="nav-item nav-link" href="index.html">Inicio</a> <a class=
+        "nav-item nav-link" href="actividades.html">Actividades</a> <a class=
+        "nav-item nav-link" href="horario.html">Horario</a> <a class=
+        "nav-item nav-link" href="tecnicos.html">Técnicos</a> <a class=
+        "nav-item nav-link" href="localizacion.html">Localización</a> <a class=
+        "nav-item nav-link" href="promociones.html">Precios y promociones</a>
+        <a class="nav-item nav-link active" href="registro.html">Alta de
+        usuarios <span class="sr-only">(current)</span></a> <a class=
+        "nav-item nav-link" href="foro.html">Foro</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container-fluid my-5 px-5">
+    <div class="row justify-content-center">
+      <form id="register-form" class="col col-lg-auto" action="registro.html"
+      method="post" name="register-form">
+        <div class="form-row">
+          <div class="col">
+            <label for="name-input">Nombre</label> <input id="name-input" type=
+            "text" name="name" class="form-control form-control-lg" required=
+            "">
+          </div>
+          <div class="w-100 d-md-none"></div>
+          <div class="col">
+            <label for="surname-input">Apellidos</label> <input id=
+            "surname-input" type="text" name="surname" class=
+            "form-control form-control-lg" required="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="dni-input">DNI</label> <input id="dni-input" type="text"
+          name="dni" class="form-control form-control-lg" required="">
+        </div>
+        <div class="form-group">
+          <label for="email-input">Correo electrónico</label> <input id=
+          "email-input" type="email" name="email" class=
+          "form-control form-control-lg" required="">
+        </div>
+        <div class="form-group d-md-flex">
+          <label class="mb-0">Sexo</label>
+          <br class="d-md-none">
+          <div class="form-check form-check-inline">
+            <input id="male-input" type="radio" name="gender" class=
+            "form-check-input" required=""> <label for="male-input" class=
+            "form-check-label">Masculino</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input id="female-input" type="radio" name="gender" class=
+            "form-check-input" required=""> <label for="female-input" class=
+            "form-check-label">Femenino</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="birthdate-input">Fecha de nacimiento</label> <input id=
+          "birthdate-input" type="date" name="birthdate" class=
+          "form-control form-control-lg" required="">
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <label for="telephone-input">Teléfono fijo</label>
+            <div class="input-group mb-2 mr-sm-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <span class="glyphicon glyphicon-phone-alt"></span>
+                </div>
+              </div><input id="telephone-input" type="text" name=
+              "telephone_number" placeholder="XXX-XXX-XXX" class=
+              "form-control form-control-lg" required="">
+            </div>
+          </div>
+          <div class="w-100 d-md-none"></div>
+          <div class="col">
+            <label for="mobile-input">Teléfono móvil</label>
+            <div class="input-group mb-2 mr-sm-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <span class="glyphicon glyphicon-earphone"></span>
+                </div>
+              </div><input id="mobile-input" type="text" name="mobile_number"
+              placeholder="XXX-XXX-XXX" class="form-control form-control-lg"
+              required="">
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-check">
+            <input id="tc-input" type="checkbox" name="tc" class=
+            "form-check-input" required=""> <label for="tc-input" class=
+            "form-check-label">He leído y acepto los <a href="#">Términos
+            generales, condiciones de alta y normativa general de la
+            instalación</a> .</label>
+          </div>
+        </div>
+        <div class="form-row justify-content-around align-items-center">
+          <input type="submit" value="Registrar" class=
+          "btn btn-lg btn-primary"> <input type="reset" value=
+          "Reiniciar formulario" class="btn">
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer class="container-fluid bg-dark p-3 px-5">
+    <div class="row">
+      <article class="col">
+        <h4 class="column-title">Est In</h4>
+        <ul>
+          <li>
+            <a href="#">Esse Ad</a>
+          </li>
+          <li>
+            <a href="#">Eu Fugiat</a>
+          </li>
+          <li>
+            <a href="#">Cillum Fugiat</a>
+          </li>
+          <li>
+            <a href="#">Laboris Laborum</a>
+          </li>
+          <li>
+            <a href="#">Fugiat Ex</a>
+          </li>
+        </ul>
+      </article>
+      <div class="w-100 d-md-none"></div>
+      <article class="col">
+        <h4 class="column-title">Aliquip Tempor</h4>
+        <ul>
+          <li>
+            <a href="#">Nulla Non</a>
+          </li>
+          <li>
+            <a href="#">Laborum Aliquip</a>
+          </li>
+          <li>
+            <a href="#">Laborum Nulla</a>
+          </li>
+          <li>
+            <a href="#">Officia Commodo</a>
+          </li>
+        </ul>
+      </article>
+      <div class="w-100 d-md-none"></div>
+      <div class="w-100 d-lg-none"></div>
+      <article class="col">
+        <h4 class="column-title">Commodo Laboris</h4>
+        <ul>
+          <li>
+            <a href="#">Deserunt Eiusmod</a>
+          </li>
+          <li>
+            <a href="#">Dolore Adipisicing</a>
+          </li>
+          <li>
+            <a href="#">Irure Est</a>
+          </li>
+          <li>
+            <a href="#">Tempor Labore</a>
+          </li>
+          <li>
+            <a href="#">Dolor Lorem</a>
+          </li>
+        </ul>
+      </article>
+      <div class="w-100 d-md-none"></div>
+      <article class="col">
+        <h4 class="column-title">Enlaces de interés</h4>
+        <ul>
+          <li>
+            <a href="#">Contactar</a>
+          </li>
+          <li>
+            <a href="#">Política de cookies</a>
+          </li>
+          <li>
+            <a href="#">Términos y condiciones</a>
+          </li>
+          <li>
+            <a href="centrodeportivo/como_se_hizo.pdf">Cómo se hizo</a>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity=
+  "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script> 
+  <script src=
+  "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity=
+  "sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script> 
+  <script src=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity=
+  "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+.thread-comment {
+  background-color: white;
+  border-radius: 3px;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+}
+
+.comment-info {
+  align-items: center;
+  border-top: 1px solid #f1f1f1;
+  padding-top: 15px;
+}
+
+.comment-info > div {
+  font-size: .75rem;
+  text-align: center;
+}
+
+.comment-content {
+  font-size: .9rem;
+}
+
+#comment-editor {
+  background-color: white;
+  border-radius: 3px;
+  padding: 1.5rem;
+}
+
+#comment-editor textarea {
+  height: 150px;
+  padding: .8rem 1rem;
+}
+
+#email-notifications-input + label {
+  font-size: .75rem;
+}
