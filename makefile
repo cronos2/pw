@@ -1,4 +1,3 @@
-BIN = ./bin
 DEST = ./dist
 SHELL := /bin/bash
 
